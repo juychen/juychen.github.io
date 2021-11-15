@@ -32,7 +32,7 @@ Your workspace should now look like this:
 The default 10GB storage of Cloud9 workspace is quite small. Thus, it is good for us to enlarge the EBS volume used by the Cloud9 instance.
 
 To increase the EBS volume, please perfrom as follows:
-1. Select the Cloud9 instance in the EC2 console at: [Link](https://console.aws.amazon.com/ec2/v2/home#Instances).
+1. Select the Cloud9 instance in the [EC2 console](https://console.aws.amazon.com/ec2/v2/home#Instances).
 2. Click the "Storage" chart
 3. Roll down, explore, and click on the "Volume ID" in the list
 

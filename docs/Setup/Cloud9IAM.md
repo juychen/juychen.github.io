@@ -16,36 +16,49 @@ nav_order: 2
 
 ---
 
+An IAM role is an IAM identity that you can create in your account that has specific permissions. It is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. We need to grant neccessary permissions to the Cloud9 environments to run the tutorial.
+
 ## Create an IAM role for your Workspace
 
-Head over to the IAM console [Link](https://console.aws.amazon.com/iam/home) and find create role ([2]) under the Roles ([1]) section.
-
-- Select Create environment
-- Name it "aws-workshop", and take all other defaults
-
-Your workspace should now look like this:
+Head over to the [IAM console](https://console.aws.amazon.com/iam/home), find and click "Create role" button **(2)** under the Roles **(1)** section.
 
 ![Image](../../src/img/Setup/Cloud9-5.jpg)
 
-## Increase the storage of the Cloud9 EBS
+Select the "AWS service" **(3)** and choose the "EC2" use case **(4)** hit Next button **(5)** at the bottom.
 
-The default 10GB storage of Cloud9 workspace is quite small. Thus, it is good for us to enlarge the EBS volume used by the Cloud9 instance.
+![Image](../../src/img/Setup/Cloud9-6.jpg)
 
-To increase the EBS volume, please perfrom as follows:
-1. Select the Cloud9 instance in the EC2 console [Link](https://console.aws.amazon.com/ec2/v2/home#Instances).
-2. Click the "Storage" chart
-3. Roll down, explore, and click on the "Volume ID" in the list
+Select the policy named "AdministratorAccess" **(6)**.
 
-![Image](../../src/img/Setup/Cloud9-2.jpg)
+![Image](../../src/img/Setup/Cloud9-7.jpg)
 
-4. Select the Volume in the list
-5. Click "Modify volume" in the sub-menu of the "Actions" button
+Tag the role with a key named "aws-workshop" with an empty value, name the role as "aws-workshop-admin" and click "Create role".
 
-![Image](../../src/img/Setup/Cloud9-3.jpg)
+![Image](../../src/img/Setup/Cloud9-8.jpg)
 
-6. Modify the volume type and size on your own demand (e.g. 100GiB) and click modify.
+![Image](../../src/img/Setup/Cloud9-9.jpg)
 
-![Image](../../src/img/Setup/Cloud9-4.jpg)
+Therefor, a role named "aws-workshop-admin" is ready for the Cloud9 envrioment.
+
+
+## Attach the IAM role to the Cloud9 Workspace
+
+- Select the Cloud9 instance in the [EC2 console](https://console.aws.amazon.com/ec2/v2/home#Instances).
+
+- Select the instance, then choose "Actions -> Security -> Modify IAM Role"
+
+![Image](../../src/img/Setup/Cloud9-10.jpg)
+
+- Choose aws-workshop-admin from the IAM Role drop down, and click "Save"
+
+![Image](../../src/img/Setup/Cloud9-11.jpg)
+
+Here, we have attached the IAM role to our Cloud9 environment.
+
+## Managed Credential Handling from Cloud9
+To not have Cloud9 overwrite the IAM roles with temporary crendentials, we will disable temporary crendential management within Cloud9.
+
+![Image](../../src/img/Setup/Cloud9-12.jpg)
 
 <div class="code-example" markdown="1">
 [Previous Step](http://example.com/){: .btn }
