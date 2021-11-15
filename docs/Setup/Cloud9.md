@@ -2,7 +2,6 @@
 layout: default
 title: Cloud9
 parent: Setup
-has_children: true
 nav_order: 1
 ---
 
