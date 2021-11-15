@@ -17,13 +17,35 @@ nav_order: 1
 
 ---
 
-## Launch Cloud9 in your closest region
+## Launch Cloud9
 
 Create a Cloud9 Environment: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
 
 - Select Create environment
-- Name it aws-workshop, and take all other defaults
+- Name it "aws-workshop", and take all other defaults
 
 Your workspace should now look like this:
 
 ![Image](../../src/img/Setup/Cloud9-1.jpg)
+
+## Increase the storage of the Cloud9 EBS
+
+The default 10GB storage of Cloud9 workspace is quite small. Thus, it is good for us to enlarge the EBS volume used by the Cloud9 instance.
+
+To increase the EBS volume, please perfrom as follows:
+1. Select the Cloud9 instance in the EC2 console [Link](https://console.aws.amazon.com/ec2/v2/home#Instances).
+
+2. Click the "Storage" chart
+3. Roll down, explore, and click on the "Volume ID" in the list
+4. Select the Volume in the list
+5. Click "Modify volume" in the sub-menu of the "Actions" button
+6. Modify the volume type and size on your own demand (e.g. 100GiB) and click modify.
+
+![Image](../../src/img/Setup/Cloud9-2.jpg)
+![Image](../../src/img/Setup/Cloud9-3.jpg)
+![Image](../../src/img/Setup/Cloud9-4.jpg)
+
+<div class="code-example" markdown="1">
+[Previous Step](http://example.com/){: .btn }
+[Next Step](http://example.com/){: .btn .btn-purple }
+</div>
