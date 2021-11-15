@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Cloud9
-parent: Cloud9
+title: Cloud9 IAM Settings
+parent: Setup
 nav_order: 1
 ---
 
-# Cloud9
+# Cloud9 IAM settings
 {: .no_toc }
 
 ## Table of contents
@@ -16,23 +16,23 @@ nav_order: 1
 
 ---
 
-## Launch Cloud9
+## Create an IAM role for your Workspace
 
-Create a Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
+Head over to the IAM console [Link](https://console.aws.amazon.com/iam/home) and find create role ([2]) under the Roles ([1]) section.
 
 - Select Create environment
 - Name it "aws-workshop", and take all other defaults
 
 Your workspace should now look like this:
 
-![Image](../../src/img/Setup/Cloud9-1.jpg)
+![Image](../../src/img/Setup/Cloud9-5.jpg)
 
 ## Increase the storage of the Cloud9 EBS
 
 The default 10GB storage of Cloud9 workspace is quite small. Thus, it is good for us to enlarge the EBS volume used by the Cloud9 instance.
 
 To increase the EBS volume, please perfrom as follows:
-1. Select the Cloud9 instance in the EC2 console at: [Link](https://console.aws.amazon.com/ec2/v2/home#Instances).
+1. Select the Cloud9 instance in the EC2 console [Link](https://console.aws.amazon.com/ec2/v2/home#Instances).
 2. Click the "Storage" chart
 3. Roll down, explore, and click on the "Volume ID" in the list
 
