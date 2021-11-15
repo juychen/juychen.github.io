@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud9
+title: Cloud9 - Environments
 parent: Setup
 has_children: true
 nav_order: 1
