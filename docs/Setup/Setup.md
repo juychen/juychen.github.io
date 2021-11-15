@@ -32,6 +32,6 @@ EOF
 ```
 
 <div class="code-example" markdown="1">
-[Previous](http://example.com/){: .btn }
-[Nex](http://example.com/){: .btn .btn-purple }
+[Previous Step](http://example.com/){: .btn }
+[Next Step](http://example.com/){: .btn .btn-purple }
 </div>
