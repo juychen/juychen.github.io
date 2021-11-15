@@ -51,6 +51,6 @@ sudo mv nextflow /usr/local/bin/
 ```
 
 <div class="code-example" markdown="1">
-[Previous Step](http://example.com/){: .btn }
+[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }
 </div>

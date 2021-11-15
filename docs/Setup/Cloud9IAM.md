@@ -38,7 +38,7 @@ Tag the role with a key named "aws-workshop" with an empty value, name the role 
 
 ![Image](../../src/img/Setup/Cloud9-9.jpg)
 
-Therefor, a role named "aws-workshop-admin" is ready for the Cloud9 envrioment.
+Therefore, a role named "aws-workshop-admin" is ready for the Cloud9 envrioment.
 
 
 ## Attach the IAM role to the Cloud9 Workspace
@@ -61,6 +61,6 @@ To not have Cloud9 overwrite the IAM roles with temporary crendentials, we will 
 ![Image](../../src/img/Setup/Cloud9-12.jpg)
 
 <div class="code-example" markdown="1">
-[Previous Step](http://example.com/){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/Setup/Cloud9.html){: .btn }
+[Next Step](https://juychen.github.io/docs/Setup/Nextflow.html){: .btn .btn-purple }
 </div>

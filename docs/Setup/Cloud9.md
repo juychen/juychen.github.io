@@ -48,6 +48,6 @@ To increase the EBS volume, please perfrom as follows:
 ![Image](../../src/img/Setup/Cloud9-4.jpg)
 
 <div class="code-example" markdown="1">
-[Previous Step](http://example.com/){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/Setup){: .btn }
+[Next Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn .btn-purple }
 </div>

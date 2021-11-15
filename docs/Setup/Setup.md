@@ -33,5 +33,5 @@ EOF
 
 <div class="code-example" markdown="1">
 [Previous Step](http://example.com/){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/Setup/Cloud9.html){: .btn .btn-purple }
 </div>
