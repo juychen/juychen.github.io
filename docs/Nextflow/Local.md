@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Cloud9 - Environments
-parent: Setup
+title: Local run of nextflow
+parent: Nextflow
 nav_order: 1
 ---
 
-# Cloud9
+# Local run
 {: .no_toc }
 
 ## Table of contents
