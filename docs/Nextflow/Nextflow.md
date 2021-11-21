@@ -69,6 +69,7 @@ docker pull public.ecr.aws/b6a4h2a6/kb_workshop:latest
 ```
 
 Afterwards, we downlaod the read files and the reference from out S3 bucket using the following command:
+
 ```shell
 aws s3 cp s3://awsscwsbucket/ref/transcripts_to_genes.txt ~/environment/aws-workshop/ref/transcripts_to_genes.txt & \
 aws s3 cp s3://awsscwsbucket/ref/transcriptome.idx ~/environment/aws-workshop/ref/transcriptome.idx & \
@@ -98,6 +99,44 @@ CPU hours   : 0.1
 Succeeded   : 1
 ```
 
+## Redirect results to the S3 bucket
+
+Create our S3 bucket
+
+``` shell
+export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
+aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
+aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
+aws s3 ls
+```
+
+Run the nextflow script
+
+``` shell
+nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
+```
+
+List outputs
+
+``` shell
+aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
+```
+
+``` shell
+workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
+                           PRE counts_unfiltered/
+2021-11-21 13:44:59          0 
+2021-11-21 13:45:09   12533760 10x_version2_whitelist.txt
+2021-11-21 13:45:09        574 inspect.json
+2021-11-21 13:45:17       2078 kb_info.json
+2021-11-21 13:45:06   83672160 matrix.ec
+2021-11-21 13:45:02  126870353 output.bus
+2021-11-21 13:45:12   77054193 output.unfiltered.bus
+2021-11-21 13:45:08        454 run_info.json
+2021-11-21 13:45:08   18376572 transcripts.txt
+```
+
+Check result
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }
