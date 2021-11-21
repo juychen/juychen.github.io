@@ -14,11 +14,11 @@ This chapter introduces the AWS services you will use as part of the workshop. I
 
 ## Clone the tutorial
 
-We will use the example Genomics workflow of the Nextflow tutorial.
+We will use the code from our repository. It contains the nextflow scripts and the required
 
 ```shell
-git clone https://github.com/seqeralabs/nextflow-tutorial.git
-cd nextflow-tutorial
+git clone https://github.com/juychen/aws-workshop.git
+cd aws-workshop
 ```
 
 ## Nextflow Config
