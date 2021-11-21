@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nextflow local run
-parent: Nextflow
+permalink: docs/Nextflow
 ---
 # Nextflow and scRNA-Seq processing
 This section introduce the run of docker image code using nextflow in the local envirionment in EC2.Our docker is a simple image which installed [kallisto | bustools (KB)](https://www.kallistobus.tools). KB is a fast tool for pre-processing single-cell RNA-seq data. The reason we apply KB in the tutorial is that KB is relatively memeory and computational efficient compared with mainstream pre-processing tools. It occupies less 
