@@ -101,16 +101,16 @@ Succeeded   : 1
 
 ## Redirect results to the S3 bucket
 
-Create our S3 bucket
-
+Create our S3 bucket to store the result. 
 ``` shell
 export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
 aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
 aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
 aws s3 ls
 ```
+Remember the AWS bucket location and this location will be the path that store your experiment result. The above command will show the result of the result bucket.
 
-Run the nextflow script
+Here, we can run the nextflow script again.
 
 ``` shell
 nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
