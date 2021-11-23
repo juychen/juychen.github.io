@@ -1,8 +1,8 @@
 ---
 layout: default
-title: AWS Batch
-nav_order: 4
+title: Batch
 has_children: true
+nav_order: 4
 ---
 
 A typical AWS Batch workload might be triggered by input data being uploaded to S3, this will kick in multiple stages.
