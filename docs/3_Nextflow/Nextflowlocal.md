@@ -5,7 +5,6 @@ parent: Nextflow
 nav_order: 1
 ---
 # Nextflow and scRNA-Seq processing
-This section introduce the run of docker image code using nextflow in the local envirionment in EC2.Our docker is a simple image which installed [kallisto | bustools (KB)](https://www.kallistobus.tools). KB is a fast tool for pre-processing single-cell RNA-seq data. The reason we apply KB in the tutorial is that KB is relatively memeory and computational efficient compared with mainstream pre-processing tools. We have tested that it can run locally using a single "t3a.2xlarge" EC2 instance.
 
 Attached is the Nextflow script we apply in this tutoruaial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/latest/getstarted.html) for more information about nextflow syntax and usage.
 

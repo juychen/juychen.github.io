@@ -20,3 +20,7 @@ During this workshop you will implement a proof of concept of AWS. The goal of t
 ## Other concepts
 - Docker: container services
 - Nextflow: language reproduce scientific workflows
+
+<div class="code-example" markdown="1">
+[Start](https://juychen.github.io/docs/Introduction){: .btn .btn-purple }
+</div>
