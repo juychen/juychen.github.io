@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nextflow
-parent: Setup
+parent: Batch
 ---
 # Nextflow
 This section introduce the installation of nextflow and its dependencies.
