@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Nextflow
+has_children: true
 nav_order: 3
 ---
 # Nextflow and scRNA-Seq processing
