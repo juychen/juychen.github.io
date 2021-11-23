@@ -6,38 +6,17 @@ nav_order: 0
 
 ## Welcome to the AWS work shop
 
-You can use the [editor on GitHub](https://github.com/juychen/juychen.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+The content of this workshop is derived from a tutorial (Nextflow with Batch)[https://genomics-nf.workshop.aws/]. But we change the goal to run our viral calling pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Overview
+During this workshop you will implement a proof of concept of AWS. The goal of this workshop is  to get familiar with the concepts of nextflow and AWS Batch.
 
-### Markdown
+## AWS concepts
+- EC2: cloud server instances
+- EC2 Spot: benefit from unused EC2 capacity
+- Cloud9: cloud coding IDE
+- Batch: batch computing of containers
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/juychen/juychen.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Other concepts
+- Docker: container services
+- Nextflow: language reproduce scientific workflows
