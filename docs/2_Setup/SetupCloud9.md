@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Setup Cloud9 Environments
+title: Setup Cloud9
 parent: Setup
 nav_order: 1
 ---
@@ -61,6 +61,26 @@ Afterwards, we will change the instance type of the Cloud9 workspace. To perform
 
 Finially, we need to restart the Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
 
+## Attach the IAM role to the Cloud9 Workspace
+
+An IAM role is an IAM identity that you can create in your account that has specific permissions. It is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. We need to grant neccessary permissions to the Cloud9 environments to run the tutorial.
+
+- Select the Cloud9 instance in the [EC2 console](https://console.aws.amazon.com/ec2/v2/home#Instances).
+
+- Select the instance, then choose "Actions -> Security -> Modify IAM Role"
+
+![Image](../../src/img/Setup/Cloud9-10.jpg)
+
+- Choose aws-workshop-admin from the IAM Role drop down, and click "Save"
+
+![Image](../../src/img/Setup/Cloud9-11.jpg)
+
+Here, we have attached the IAM role to our Cloud9 environment.
+
+## Managed Credential Handling from Cloud9
+To not have Cloud9 overwrite the IAM roles with temporary crendentials, we will disable temporary crendential management within Cloud9.
+
+![Image](../../src/img/Setup/Cloud9-12.jpg)
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup){: .btn }
