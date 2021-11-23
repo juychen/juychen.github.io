@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud9 - IAM Settings
+title: Setup Cloud9 IAM
 parent: Setup
 nav_order: 2
 ---

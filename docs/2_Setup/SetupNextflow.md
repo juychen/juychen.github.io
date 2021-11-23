@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Nextflow
+title: Setup Nextflow
 parent: Setup
 nav_order: 3
 ---
