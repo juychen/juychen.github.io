@@ -1,3 +1,9 @@
+---
+layout: default
+title: Welcome
+nav_order: 0
+---
+
 ## Welcome to the AWS work shop
 
 You can use the [editor on GitHub](https://github.com/juychen/juychen.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
