@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Batch - Environments
+title: Batch Setup
 parent: Batch
 nav_order: 1
 ---
