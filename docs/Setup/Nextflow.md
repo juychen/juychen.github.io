@@ -2,6 +2,7 @@
 layout: default
 title: Nextflow
 parent: Setup
+nav_order: 3
 ---
 # Nextflow
 This section introduce the installation of nextflow and its dependencies.
