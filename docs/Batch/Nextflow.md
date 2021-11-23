@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Nextflow
+title: Nextflow - batch
 parent: Batch
+nav_order: 2
 ---
 # Nextflow
 This section introduce the installation of nextflow and its dependencies.
