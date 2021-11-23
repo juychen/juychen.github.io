@@ -45,7 +45,7 @@ aws ec2 --region ${AWS_REGION} create-launch-template --cli-input-json file://la
 
 
 
-This command will creat a 
+This command will creat a t
 Create an AWS Batch Environment at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
 
 - Select "Create"
