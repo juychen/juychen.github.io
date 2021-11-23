@@ -9,7 +9,7 @@ This section introduce the installation of nextflow and its dependencies.
 
 ## Amazon Corretto
 
-To install Corretto , we are adding the repository first.
+To install Corretto, we are adding the repository first.
 
 ```shell
 sudo rpm --import https://yum.corretto.aws/corretto.key

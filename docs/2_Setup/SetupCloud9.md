@@ -71,7 +71,8 @@ An IAM role is an IAM identity that you can create in your account that has spec
 
 ![Image](../../src/img/Setup/Cloud9-10.jpg)
 
-- Choose aws-workshop-admin from the IAM Role drop down, and click "Save"
+- Choose "aws-workshop-admin" from the IAM Role drop down, and click "Save" (we created this following the [IAM role setting page](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
+
 
 ![Image](../../src/img/Setup/Cloud9-11.jpg)
 

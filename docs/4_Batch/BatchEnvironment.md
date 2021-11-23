@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Batch Setup
+title: Batch Compute Environmnet
 parent: Batch
 nav_order: 1
 ---
 
-# Create AWS Batch Environmnet
+# Create Batch Compute Environmnet
 {: .no_toc }
 
 ## Table of contents
@@ -16,39 +16,39 @@ nav_order: 1
 
 ---
 
-## Setup Batch Envirionment
+## Setup Batch Compute Envirionment
 
-Before we start, we need to setup a launch template of EC2 instance for our computing environments for AWS batch. Because we have mentioned in the previous section that the storage of EC2 instance is not enough for the scRNA-Seq preprocessing.
-
-The launch template file in our project (launch-template-data.json) is shown as follows:
-```json
-{
-    "LaunchTemplateName": "increase-volume",
-    "LaunchTemplateData": {
-        "BlockDeviceMappings": [
-            {
-                "DeviceName": "/dev/xvda",
-                "Ebs": {
-                    "VolumeSize": 100,
-                    "VolumeType": "gp2"
-                }
-            }
-        ]
-    }
-}
-```
-With this template name "increase-volume", we can encrease the default storage of EC2 instances to 100GB. We can run the following script: 
-
-```shell
-aws ec2 --region ${AWS_REGION} create-launch-template --cli-input-json file://launch-template-data.json
-```
-
-
-This command will creat a t
 Create an AWS Batch Environment at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
 
-- Select "Create"
-- Name it "aws-workshop", and take all other defaults
+- Select "Compute environments" on the left panel
+- Select "Create" to creat a new compute environments
+
+![Image](../../src/img/Batch/Batch-env1.jpg)
+
+In the compute environments page, set your preference of the compute envrioment as follows:
+- Select "Managed" in the compute environment type
+- Change the enviromnet name in the compute envrionment name. We suggest that you should use "spot-ce-userxxx" according to your own username.
+- Select "aws-workshop-batch" in the service role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
+- Select "aws-workshop-admin" in the instance role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
+
+![Image](../../src/img/Batch/Batch-env2.jpg)
+
+- Select "Spot" in the provisioning model in order to save money
+- Set "8" in both Minium and desired vCPU settings in order to run KB
+
+![Image](../../src/img/Batch/Batch-env3.jpg)
+
+- Select "r5.2xlarge" in the Allowed instance type because KB require 8 Cores and around 32GB memory.
+- Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
+- Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
+ 
+
+Because we have mentioned in the previous section that the storage of EC2 instance is not enough for the scRNA-Seq preprocessing. 
+
+![Image](../../src/img/Batch/Batch-env3.1.jpg)
+
+![Image](../../src/img/Batch/Batch-env4.jpg)
+
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup){: .btn }
