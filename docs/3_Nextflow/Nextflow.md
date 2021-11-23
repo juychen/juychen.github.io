@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nextflow local run
-permalink: docs/NextflowLocal
+permalink: docs/Nextflow
 nav_order: 3
 ---
 # Nextflow and scRNA-Seq processing

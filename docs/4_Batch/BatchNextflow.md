@@ -3,7 +3,6 @@ layout: default
 title: Nextflow - batch
 parent: Batch
 nav_order: 2
-permalink: docs/NextflowBatch
 ---
 # Nextflow
 This section introduce the installation of nextflow and its dependencies.

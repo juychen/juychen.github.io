@@ -3,7 +3,6 @@ layout: default
 title: Setup
 nav_order: 2
 has_children: true
-permalink: docs/Setup
 ---
 
 To get started with Nextflow we are going to run a little example workflow locally.
