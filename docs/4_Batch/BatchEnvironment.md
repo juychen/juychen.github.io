@@ -38,7 +38,7 @@ In the compute environments page, set your preference of the compute envrioment 
 
 ![Image](../../src/img/Batch/Batch-env3.jpg)
 
-- Select "r5.2xlarge" in the Allowed instance type because KB require 8 Cores and around 32GB memory.
+- Select "m5a.4xlarge" in the Allowed instance type because KB require at least 8 Cores and around 32GB memory.
 - Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
 - Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
  

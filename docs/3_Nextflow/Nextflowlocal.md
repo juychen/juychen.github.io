@@ -104,9 +104,9 @@ Create our S3 bucket to store the result.
 export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
 aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
 aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
-aws s3 ls
+echo ${BUCKET_NAME_RESULTS}
 ```
-Remember the AWS bucket location and this location will be the path that store your experiment result. The above command will show the result of the result bucket.
+In this step, you will create a bucket on the AWS S3. It will have a fold name like "nextflow-spot-batch-result-14962-1637501981". Remember to **Remember the AWS bucket location**. This location will be the path that store your experiment result. Also, this buck will be used in the following step. The above command will show the result of the result bucket.
 
 Here, we can run the nextflow script again.
 
@@ -114,12 +114,13 @@ Here, we can run the nextflow script again.
 nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
 ```
 
-List outputs
+Then, we can list the result in the S3 bucket
 
 ``` shell
 aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
 ```
 
+The result should be somthing similar to this.
 ``` shell
 workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
                            PRE counts_unfiltered/
@@ -133,8 +134,6 @@ workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESUL
 2021-11-21 13:45:08        454 run_info.json
 2021-11-21 13:45:08   18376572 transcripts.txt
 ```
-
-Check result
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }
