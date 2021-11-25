@@ -78,24 +78,21 @@ nextflow run script1.nf -profile batch -bucket-dir s3://${BUCKET_NAME_TEMP} --ou
 The output is going to look similar to this:
 
 ```shell
-N E X T F L O W  ~  version 20.10 .0
-Launching `script7.nf` [jovial_jones] - revision: ce58523d1d
-R N A S E Q - N F   P I P E L I N E
+N E X T F L O W  ~  version 21.10.0
+Launching `script1.nf` [pedantic_banach] - revision: 5a7b285dbf
+SCVH - N F   P I P E L I N E
 ===================================
-transcriptome: /home/ec2-user/environment/nextflow-tutorial/data/ggal/transcriptome.fa
-reads        : /home/ec2-user/environment/nextflow-tutorial/data/ggal/gut_{1,2}.fq
-outdir       : s3://nextflow-spot-batch-result-23641-1587713021
-WARN: Unable to create AWS Batch helper class | credentials cannot be null
-executor >  awsbatch (4)
-[2b/641a4f] process > index          [100%] 1 of 1 ✔
-[f0/a87531] process > quantification [100%] 1 of 1 ✔
-[08/014db2] process > fastqc         [100%] 1 of 1 ✔
-[a1/ced1b8] process > multiqc        [100%] 1 of 1 ✔
-Done! Open the following report in your browser --> s3://nextflow-spot-batch-result-23641-1587713021/batch/multiqc_report.html
-Completed at: 24-Apr-2020 08:15:40
-Duration    : 2m 42s
-CPU hours   : (a few seconds)
-Succeeded   : 4
+transcriptome: s3://awsscwsbucket/ref/
+reads        : s3://awsscwsbucket/seqs/SRR11537951/*_{2,1}.fastq.gz
+outdir       : s3://nextflow-spot-batch-result-14962-1637501981/batch
+
+executor >  awsbatch (1)
+[8d/08a183] process > Map (1) [100%] 1 of 1 ✔
+Waiting files transfer to complete (1 files)
+Completed at: 25-Nov-2021 14:42:58
+Duration    : 16m 14s
+CPU hours   : 3.1
+Succeeded   : 1
 ```
 
 ## Monitoring Jobs
