@@ -57,25 +57,14 @@ echo ${BUCKET_NAME_TEMP}
 "nextflow-spot-batch-result-14962-1637501981". **Remember the AWS bucket location** again.
 
 
-## AWS Region
-
-Even though we are depending on an IAM Role and not local permissions some tools depend on having the AWS_REGION defined as environment variable - let's add it to our login shell configuration.
-
-
-```shell
-export AWS_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
-echo "AWS_REGION=${AWS_REGION}" |tee -a ~/.bashrc
-```
-
 ## Nextflow
 
-Installing Nextflow using an online installer. The snippet creates the Nextflow launcher in the current directory. So we just move the command to /usr/local/bin to have it ready to be executed anywhere.
-
+After all settings are done. We can simply execute our nextflow script as follows:
 
 ```shell
 nextflow run script1.nf -profile batch -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batch
 ```
-The output is going to look similar to this:
+This step may take around 16 minutes. The output is going to look like to this:
 
 ```shell
 N E X T F L O W  ~  version 21.10.0
@@ -97,8 +86,17 @@ Succeeded   : 1
 
 ## Monitoring Jobs
 
-Head to the AWS Batch [dashboard](https://aws.amazon.com/batch/home#dashboard).
+The monitoring of job is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
 
+## View pricing of the program
+
+To check the bill of our previous run, we can go to the EC2 Dashboard and find the Spot Request section at [https://console.aws.amazon.com/ec2sp/v2/home#/spot](https://console.aws.amazon.com/ec2sp/v2/home#/spot). Click saving summary to view the cost we saved by applying spot instances.
+
+![Image](../../src/img/Batch/Batch-price1.jpg)
+
+This saving summary page shows the price. We know that to align a 12GB scRNA-Seq sample takes $0.17. Thanks to the spot instances, we can save 79% of money compare to host a on-demand EC2 instance.
+
+![Image](../../src/img/Batch/Batch-price2.jpg)
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
