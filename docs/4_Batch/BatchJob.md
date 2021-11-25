@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Batch Compute Environmnet
+title: Batch Jobs
 parent: Batch
-nav_order: 1
+nav_order: 3
 ---
 
-# Create Batch Compute Environmnet
+# Create A Batch Simple Batch Job
 {: .no_toc }
 
 ## Table of contents
@@ -16,12 +16,40 @@ nav_order: 1
 
 ---
 
-## Setup Batch Compute Envirionment
+In this section, we will learn to creat Batch jobs trough the AWS Batch website. However, since it would take long to finish an KB job. We just try to test whether KB is correctally configured in our created container in the present section.
 
-Create an AWS Batch Environment at: [https://console.aws.amazon.com/batch/home](https://console.aws.amazon.com/batch/home).
+## Create a job definition
+In the previous steps we created resources needed to run AWS Batch jobs. Now we can creat a job in the AWS console
 
-- Select "Compute environments" on the left panel
-- Select "Create" to creat a new compute environments
+Create an AWS Batch Environment at: [https://console.aws.amazon.com/batch/home#job-definition](https://console.aws.amazon.com/batch/home#job-definition). 
+
+- Select "Job Definition" on the left panel
+- Select "Create" to creat a new job definition
+
+![Image](../../src/img/Batch/Batch-job1.jpg)
+
+- Enter a name for you definition such as "touch-kb-definition-userxxx"
+- Select "EC2" in the Platform type
+
+![Image](../../src/img/Batch/Batch-job2.jpg)
+
+- Insert our image url "public.ecr.aws/b6a4h2a6/kb_workshop:latest" in the 'Image' field.
+- Leave the 'Command' field blank.
+
+
+![Image](../../src/img/Batch/Batch-job3.jpg)
+
+
+
+In the AWS Batch console, choose Job Definitions, Create.
+For the Job Definition, enter a name, for example, fetch_and_run.
+For IAM Role, choose the role that you created earlier, batchJobRole.
+For ECR Repository URI, enter the URI where the fetch_and_run image was pushed, for example: 012345678901.dkr.ecr.us-east-1.amazonaws.com/awsbatch/fetch_and_run.
+Leave the Command field blank.
+For vCPUs, enter 1. For Memory, enter 500.
+
+
+
 
 ![Image](../../src/img/Batch/Batch-env1.jpg)
 
