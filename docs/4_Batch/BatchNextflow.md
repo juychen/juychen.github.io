@@ -57,51 +57,46 @@ echo ${BUCKET_NAME_TEMP}
 "nextflow-spot-batch-result-14962-1637501981". **Remember the AWS bucket location** again.
 
 
-## AWS Region
-
-Even though we are depending on an IAM Role and not local permissions some tools depend on having the AWS_REGION defined as environment variable - let's add it to our login shell configuration.
-
-
-```shell
-export AWS_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
-echo "AWS_REGION=${AWS_REGION}" |tee -a ~/.bashrc
-```
-
 ## Nextflow
 
-Installing Nextflow using an online installer. The snippet creates the Nextflow launcher in the current directory. So we just move the command to /usr/local/bin to have it ready to be executed anywhere.
-
+After all settings are done. We can simply execute our nextflow script as follows:
 
 ```shell
 nextflow run script1.nf -profile batch -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batch
 ```
-The output is going to look similar to this:
+This step may take around 16 minutes. The output is going to look like to this:
 
 ```shell
-N E X T F L O W  ~  version 20.10 .0
-Launching `script7.nf` [jovial_jones] - revision: ce58523d1d
-R N A S E Q - N F   P I P E L I N E
+N E X T F L O W  ~  version 21.10.0
+Launching `script1.nf` [pedantic_banach] - revision: 5a7b285dbf
+SCVH - N F   P I P E L I N E
 ===================================
-transcriptome: /home/ec2-user/environment/nextflow-tutorial/data/ggal/transcriptome.fa
-reads        : /home/ec2-user/environment/nextflow-tutorial/data/ggal/gut_{1,2}.fq
-outdir       : s3://nextflow-spot-batch-result-23641-1587713021
-WARN: Unable to create AWS Batch helper class | credentials cannot be null
-executor >  awsbatch (4)
-[2b/641a4f] process > index          [100%] 1 of 1 ✔
-[f0/a87531] process > quantification [100%] 1 of 1 ✔
-[08/014db2] process > fastqc         [100%] 1 of 1 ✔
-[a1/ced1b8] process > multiqc        [100%] 1 of 1 ✔
-Done! Open the following report in your browser --> s3://nextflow-spot-batch-result-23641-1587713021/batch/multiqc_report.html
-Completed at: 24-Apr-2020 08:15:40
-Duration    : 2m 42s
-CPU hours   : (a few seconds)
-Succeeded   : 4
+transcriptome: s3://awsscwsbucket/ref/
+reads        : s3://awsscwsbucket/seqs/SRR11537951/*_{2,1}.fastq.gz
+outdir       : s3://nextflow-spot-batch-result-14962-1637501981/batch
+
+executor >  awsbatch (1)
+[8d/08a183] process > Map (1) [100%] 1 of 1 ✔
+Waiting files transfer to complete (1 files)
+Completed at: 25-Nov-2021 14:42:58
+Duration    : 16m 14s
+CPU hours   : 3.1
+Succeeded   : 1
 ```
 
 ## Monitoring Jobs
 
-Head to the AWS Batch [dashboard](https://aws.amazon.com/batch/home#dashboard).
+The monitoring of job is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
 
+## View pricing of the program
+
+To check the bill of our previous run, we can go to the EC2 Dashboard and find the Spot Request section at [https://console.aws.amazon.com/ec2sp/v2/home#/spot](https://console.aws.amazon.com/ec2sp/v2/home#/spot). Click saving summary to view the cost we saved by applying spot instances.
+
+![Image](../../src/img/Batch/Batch-price1.jpg)
+
+This saving summary page shows the price. We know that to align a 12GB scRNA-Seq sample takes $0.17. Thanks to the spot instances, we can save 79% of money compare to host a on-demand EC2 instance.
+
+![Image](../../src/img/Batch/Batch-price2.jpg)
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
