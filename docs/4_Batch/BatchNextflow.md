@@ -37,13 +37,13 @@ profiles {
     aws.region = '${AWS_REGION}'
     process.container = 'public.ecr.aws/b6a4h2a6/kb_workshop:latest'
     process.executor = 'awsbatch'
-    process.queue = 'job-queue-userxxx'
+    process.queue = [***Fill your own job queue name here***]
   }
 }
 EOF
 ```
 
-Remember to rename 'job-queue-userxxx' to the name of your own job queue.
+**Remember to set the process.queue to the name of your own job queue.**
 
 Nextflow will evaluate a nextflow.config file next to the script we are executing (which would be the file in the current directory) and also fall back to $HOME/.nextflow/config for additional configuration. As we are going to use the latter one when using AWS Batch squared we are changing both. Thus, we are going to change the Nextflow configuration files.
 
