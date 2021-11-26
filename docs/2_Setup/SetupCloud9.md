@@ -45,6 +45,26 @@ Firstly, we increase the storage of the instance. To increase the EBS volume, pl
 
 ![Image](../../src/img/Setup/Cloud9-4.jpg)
 
+
+## Resize File system
+Changing the block device does not increase the size of the file system.
+To do so head back to the Cloud9 instance terminal and use the following commands.
+
+```shell
+sudo growpart /dev/xvda 1
+sudo xfs_growfs $(df -h |awk '/^\/dev/{print $1}')
+df --human-readable
+```
+
+The root file-system should now show 99GB.
+
+```shell
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        483M   60K  483M   1% /dev
+tmpfs           493M     0  493M   0% /dev/shm
+/dev/xvda1       99G  8.0G   91G   9% /
+````
+
 Consequentlly, the storge of our Cloud9 work spaces is 100GB now.
 
 ## Increase the number of CPU and Memory for the Cloud9 

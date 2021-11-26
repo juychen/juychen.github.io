@@ -71,8 +71,8 @@ Afterwards, we downlaod the read files and the reference from out S3 bucket usin
 ```shell
 aws s3 cp s3://awsscwsbucket/ref/transcripts_to_genes.txt ~/environment/aws-workshop/ref/transcripts_to_genes.txt & \
 aws s3 cp s3://awsscwsbucket/ref/transcriptome.idx ~/environment/aws-workshop/ref/transcriptome.idx & \
-aws s3 cp s3://awsscwsbucket/seqs/SRR11181959_2.fastq.gz ~/environment/aws-workshop/data/SRR11537951_1.fastq.gz &\
-aws s3 cp s3://awsscwsbucket/seqs/SRR11181959_1.fastq.gz ~/environment/aws-workshop/data/SRR11537951_2.fastq.gz;
+aws s3 cp s3://awsscwsbucket/seqs/SRR11537951/SRR11537951_1.fastq.gz ~/environment/aws-workshop/data/SRR11537951_1.fastq.gz &\
+aws s3 cp s3://awsscwsbucket/seqs/SRR11537951/SRR11537951_2.fastq.gz ~/environment/aws-workshop/data/SRR11537951_2.fastq.gz;
 ```
 
 ``` shell
