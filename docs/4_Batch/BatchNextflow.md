@@ -52,6 +52,7 @@ Here we would like to depoly another bucket to store the temporary files that AW
 export BUCKET_NAME_TEMP=nextflow-spot-batch-temp-${RANDOM}-$(date +%s)
 aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_TEMP}
 aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_TEMP} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
+echo "BUCKET_NAME_TEMP=${BUCKET_NAME_TEMP}" |tee -a ~/.bashrc 
 echo ${BUCKET_NAME_TEMP}
 ```
 "nextflow-spot-batch-result-14962-1637501981". **Remember the AWS bucket location** again.
