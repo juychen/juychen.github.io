@@ -37,6 +37,6 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup){: .btn }
-[Next Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn .btn-purple }
+[Previous Step]https://juychen.github.io/docs/4_Batch/BatchEnvironment.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/BatchJob.html){: .btn .btn-purple }
 </div>

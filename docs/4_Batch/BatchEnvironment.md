@@ -51,6 +51,6 @@ Because we have mentioned in the previous section that the storage of EC2 instan
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup){: .btn }
-[Next Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/BatchQueue.html){: .btn .btn-purple }
 </div>

@@ -102,6 +102,6 @@ workshop-user-00:~/environment/aws-workshop (main) $
 
 Then you will come back to the operation system of the EC2 instance.
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn }
+[Next Step](https://juychen.github.io/docs/3_Nextflow/Nextflowlocal.html){: .btn .btn-purple }
 </div>

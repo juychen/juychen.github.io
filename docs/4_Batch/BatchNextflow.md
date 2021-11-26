@@ -4,7 +4,17 @@ title: Nextflow - batch
 parent: Batch
 nav_order: 4
 ---
+
 # Nextflow on Batch
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 ## Update Configuration 
 Now that we have created queues and compute environments, we can wire them into Nextflow.
@@ -100,6 +110,6 @@ This saving summary page shows the price. We know that to align a 12GB scRNA-Seq
 ![Image](../../src/img/Batch/Batch-price2.jpg)
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
+[Previous Step](https://juychen.github.io/docs/4_Batch/BatchJob.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }
 </div>

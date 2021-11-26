@@ -18,6 +18,6 @@ the compute capacity to allow the jobs to run.
 
 
 <div class="code-example" markdown="1">
-[Previous Step](http://example.com/){: .btn }
-[Next Step](https://juychen.github.io/docs/Setup/Cloud9.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html){: .btn .btn-purple }
 </div>

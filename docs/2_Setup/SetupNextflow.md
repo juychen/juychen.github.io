@@ -45,6 +45,6 @@ sudo mv nextflow /usr/local/bin/
 ```
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/2_Setup/SetupCloud9.html){: .btn }
+[Next Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn .btn-purple }
 </div>

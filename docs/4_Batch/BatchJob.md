@@ -92,6 +92,6 @@ Inside the log stream, we can see the help information of the KB tool as we expe
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup){: .btn }
-[Next Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/4_Batch/BatchQueue.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/BatchNextflow.html){: .btn .btn-purple }
 </div>
