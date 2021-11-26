@@ -1,69 +1,63 @@
 ---
 layout: default
-title: Nextflow local run
+title: Nextflow local run preparation
 parent: Nextflow
-nav_order: 2
+nav_order: 1
 ---
-# Nextflow and scRNA-Seq processing
 
-Attached is the Nextflow script we apply in this tutoruaial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/latest/getstarted.html) for more information about nextflow syntax and usage.
+# Nextflow local run preparation
+{: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
 
+1. TOC
+{:toc}
 
-```shell
-#!/usr/bin/env nextflow
-/*
- * pipeline input parameters
- */
-params.baseDir = "."
-params.reads = "$baseDir/data/*_{2,1}.fastq.gz" 
-params.outdir = "$baseDir/outputs"
-params.refdir = "$baseDir/ref"
-params.codebase = "~"
-log.info """\
-        - N F   P I P E L I N E -
-         ===================================
-         references   : ${params.refdir}
-         reads        : ${params.reads}
-         outdir       : ${params.outdir}
-         """
-         .stripIndent()
+---
 
+## Overview of the process
 
-Channel
-    .fromFilePairs( params.reads )
-    .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
-    .view()
-    .set { read_pairs_ch }
+Attached is the Nextflow script we apply in this tutorial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. Then we apply scanpy to perform some basic analysis on the generated count matrix.
 
-/*
- * 1. Mapping
- */
-process Map {
-    
-    publishDir params.outdir, mode: 'copy', overwrite: false
+## Introduction to containers
 
-    input:
-    tuple val(SRR_id), file(reads) from read_pairs_ch
-    path ref from params.refdir
-    output:
-    val SRR_id into id_ch
-    file("${SRR_id}/") into results_ch
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
-    shell
-    """
-    kb count -x=10XV2 -g="${ref}/transcripts_to_genes.txt"  -i="${ref}/transcriptome.idx" -o="${SRR_id}" --tmp="~/kbtemp" --h5ad \
-    "${params.baseDir}/${SRR_id}_1.fastq.gz" \
-    "${params.baseDir}/${SRR_id}_2.fastq.gz" \
-    """
-}
+The container (/aws-workshop/Dockerfile) in the presnet workshop look like this:
+
+```docker
+FROM python:3.7.5-slim
+ARG KB_VERSION=0.24.4
+COPY . /root
+RUN apt-get update && \
+	apt-get install --no-install-recommends -y curl dpkg-dev gnupg lsb-release procps
+ENV PATH="/usr/local/bin:${PATH}"
+RUN pip install --upgrade pip && pip install kb-python awscli scanpy[leiden]```
 ```
 
-Pull Image and download files
-To run the docker image locally, we need to pull the docker image from the Amazon ECR 
+This is a simple container that with python packages "kb-python" "awscli" and "scanpy". A container is similar to a small virual machine. When you build a docker image, those commands in the dockerfile are command in the console helping you to setup softwares and environments. We have build a runnable docker image stored in the AWS ECR repositoy. You can download it by the following command: 
+
 
 ```shell
 docker pull public.ecr.aws/b6a4h2a6/kb_workshop:latest
+```
+
+The consle will output some information after you correctlly pull an image like this:
+
+```shell
+latest: Pulling from b6a4h2a6/kb_workshop
+000eee12ec04: Already exists 
+ddc2d83f8229: Already exists 
+735b0bee82a3: Already exists 
+8c69dcedfc84: Already exists 
+495e1cccc7f9: Already exists 
+d7c2e86e32fa: Pull complete 
+5aca37fc9282: Pull complete 
+4a8de34bdc8d: Pull complete 
+Digest: sha256:31e1c06c105c0471e99eb87631731fdcd08758ff7aa0c3f11709104dd31d9387
+Status: Downloaded newer image for public.ecr.aws/b6a4h2a6/kb_workshop:latest
+public.ecr.aws/b6a4h2a6/kb_workshop:latest
 ```
 
 Afterwards, we downlaod the read files and the reference from out S3 bucket using the following command:
@@ -80,8 +74,8 @@ nextflow  run script0.nf
 ``` 
 
 ``` shell
-N E X T F L O W  ~  version 21.10.0
-Launching `script0.nf` [drunk_fermat] - revision: 6569bffc1c
+N E X T F L O W  ~  version 21.10.3
+Launching `script0.nf` [serene_euclid] - revision: 03d5e629a6
 - N F   P I P E L I N E -
  ===================================
  references   : /home/ec2-user/environment/aws-workshop/ref
@@ -89,12 +83,13 @@ Launching `script0.nf` [drunk_fermat] - revision: 6569bffc1c
  outdir       : /home/ec2-user/environment/aws-workshop/outputs
 
 [SRR11537951, [/home/ec2-user/environment/aws-workshop/data/SRR11537951_1.fastq.gz, /home/ec2-user/environment/aws-workshop/data/SRR11537951_2.fastq.gz]]
-executor >  local (1)
-[84/60ccf3] process > Map (1) [100%] 1 of 1 ✔
-Completed at: 21-Nov-2021 08:58:11
-Duration    : 4m 29s
+executor >  local (2)
+[01/79910a] process > Map (1)      [100%] 1 of 1 ✔
+[96/da8bfe] process > Analysis (1) [100%] 1 of 1 ✔
+Completed at: 26-Nov-2021 09:01:21
+Duration    : 4m 49s
 CPU hours   : 0.1
-Succeeded   : 1
+Succeeded   : 2
 ```
 
 ## Redirect results to the S3 bucket
