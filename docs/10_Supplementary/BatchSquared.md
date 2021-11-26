@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Batch Squared
-parent: Batch
-nav_order: 4
+parent: Supplementary
 ---
 
 # Create Batch Job Queue
