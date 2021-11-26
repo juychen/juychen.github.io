@@ -34,7 +34,7 @@ COPY . /root
 RUN apt-get update && \
 	apt-get install --no-install-recommends -y curl dpkg-dev gnupg lsb-release procps
 ENV PATH="/usr/local/bin:${PATH}"
-RUN pip install --upgrade pip && pip install kb-python awscli scanpy[leiden]```
+RUN pip install --upgrade pip && pip install kb-python awscli scanpy[leiden]
 ```
 
 This is a simple container that with python packages "kb-python" "awscli" and "scanpy". A container is similar to a small virual machine. When you build a docker image, those commands in the dockerfile are command in the console helping you to setup softwares and environments. We have build a runnable docker image stored in the AWS ECR repositoy. You can download it by the following command: 
@@ -61,6 +61,46 @@ Status: Downloaded newer image for public.ecr.aws/b6a4h2a6/kb_workshop:latest
 public.ecr.aws/b6a4h2a6/kb_workshop:latest
 ```
 
+Afterwards, you can try to head into the container we pull to look around using the following command:
+
+```shell
+docker run -it public.ecr.aws/b6a4h2a6/kb_workshop:latest /bin/bash
+```
+
+For more information, you can head to the documentation of the [docker run](https://docs.docker.com/engine/reference/commandline/run/) command page.
+This is a command that creates a writeable container layer over the specified image (public.ecr.aws/b6a4h2a6/kb_workshop:latest), and then starts it using the specified command (/bin/bash). After we run this command, we have been into 'another operating system.' We can type a KB help command to check whether we are in another system because we did not install kb in the EC2 instance.
+
+```shell
+kb --help
+```
+
+If the result is something like:
+
+```shell
+usage: kb [-h] [--list] <CMD> ...
+
+kb_python 0.26.4
+
+positional arguments:
+  <CMD>
+    info      Display package and citation information
+    ref       Build a kallisto index and transcript-to-gene mapping
+    count     Generate count matrices from a set of single-cell FASTQ files
+
+optional arguments:
+  -h, --help  Show this help message and exit
+  --list      Display list of supported single-cell technologies
+```
+
+Then you have correctlly pulled the image. You can exit the container using the exit command:
+
+```shell
+root@e6d2ce35c6dc:/# exit
+exit
+workshop-user-00:~/environment/aws-workshop (main) $ 
+```
+
+Then you will come back to the operation system of the EC2 instance.
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }

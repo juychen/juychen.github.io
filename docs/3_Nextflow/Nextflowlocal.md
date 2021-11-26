@@ -80,8 +80,8 @@ nextflow  run script0.nf
 ``` 
 
 ``` shell
-N E X T F L O W  ~  version 21.10.0
-Launching `script0.nf` [drunk_fermat] - revision: 6569bffc1c
+N E X T F L O W  ~  version 21.10.3
+Launching `script0.nf` [serene_euclid] - revision: 03d5e629a6
 - N F   P I P E L I N E -
  ===================================
  references   : /home/ec2-user/environment/aws-workshop/ref
@@ -89,12 +89,13 @@ Launching `script0.nf` [drunk_fermat] - revision: 6569bffc1c
  outdir       : /home/ec2-user/environment/aws-workshop/outputs
 
 [SRR11537951, [/home/ec2-user/environment/aws-workshop/data/SRR11537951_1.fastq.gz, /home/ec2-user/environment/aws-workshop/data/SRR11537951_2.fastq.gz]]
-executor >  local (1)
-[84/60ccf3] process > Map (1) [100%] 1 of 1 ✔
-Completed at: 21-Nov-2021 08:58:11
-Duration    : 4m 29s
+executor >  local (2)
+[01/79910a] process > Map (1)      [100%] 1 of 1 ✔
+[96/da8bfe] process > Analysis (1) [100%] 1 of 1 ✔
+Completed at: 26-Nov-2021 09:01:21
+Duration    : 4m 49s
 CPU hours   : 0.1
-Succeeded   : 1
+Succeeded   : 2
 ```
 
 ## Redirect results to the S3 bucket
@@ -135,6 +136,6 @@ workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESUL
 2021-11-21 13:45:08   18376572 transcripts.txt
 ```
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowDocker.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn .btn-purple }
 </div>

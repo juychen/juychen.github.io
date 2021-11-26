@@ -93,6 +93,6 @@ To not have Cloud9 overwrite the IAM roles with temporary crendentials, we will 
 ![Image](../../src/img/Setup/Cloud9-12.jpg)
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup){: .btn }
-[Next Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn }
+[Next Step](https://juychen.github.io/docs/2_Setup/SetupNextflow.html){: .btn .btn-purple }
 </div>

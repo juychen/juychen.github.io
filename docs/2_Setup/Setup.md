@@ -13,6 +13,6 @@ This chapter introduces the AWS services you will use as part of the workshop. I
 
 
 <div class="code-example" markdown="1">
-[Previous Step](http://example.com/){: .btn }
+[Previous Step](https://juychen.github.io/docs/Introduction){: .btn }
 [Next Step](https://juychen.github.io/docs/Setup/Cloud9.html){: .btn .btn-purple }
 </div>

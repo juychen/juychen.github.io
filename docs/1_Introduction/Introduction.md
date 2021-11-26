@@ -19,5 +19,6 @@ This section introduce the run of docker image code using nextflow in the local 
 2. Wolf, F. Alexander, Philipp Angerer, and Fabian J. Theis. "SCANPY: large-scale single-cell gene expression data analysis." Genome biology 19.1 (2018): 1-5.
 
 <div class="code-example" markdown="1">
-[Next Step](https://juychen.github.io/docs/Setup){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io){: .btn }
+[Next Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn .btn-purple }
 </div>

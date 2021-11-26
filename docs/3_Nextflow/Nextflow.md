@@ -14,6 +14,6 @@ You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/lates
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/Setup/Cloud9IAM.html){: .btn }
-[Next Step](http://example.com/){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn }
+[Next Step](https://juychen.github.io/docs/3_Nextflow/NextflowDocker.html){: .btn .btn-purple }
 </div>
