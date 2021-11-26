@@ -7,23 +7,16 @@ nav_order: 3
 # Nextflow
 This section introduce the installation of nextflow and its dependencies.
 
-## Amazon Corretto
+## Clone the tutorial
 
-To install Corretto , we are adding the repository first.
-
-```shell
-sudo rpm --import https://yum.corretto.aws/corretto.key
-sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-```
-
-Afterwards install java-11 and check the installation.
+We will use the code from our repository. It contains the nextflow scripts and the required
 
 ```shell
-sudo yum install -y java-11-amazon-corretto-devel
-java --version
+git clone https://github.com/juychen/aws-workshop.git
+cd aws-workshop
 ```
 
-## Graphviz
+## Graphviz and jq
 
 Nextflow is able to render graphs for which it needs graphviz to be installed. jq will help us deal with JSON files.
 

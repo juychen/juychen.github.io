@@ -2,7 +2,6 @@
 layout: default
 title: IAM Setup
 parent: Supplementary
-nav_order: 1
 ---
 
 ## Create an IAM role for your Workspace

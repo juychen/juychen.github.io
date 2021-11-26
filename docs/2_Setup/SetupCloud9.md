@@ -21,7 +21,10 @@ nav_order: 1
 Create a Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
 
 - Select Create environment
-- Name it "aws-workshop", and take all other defaults
+- Name it "aws-workshop-userxxx" which "userxx" is your user name to better identification of your instance
+- Select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimun requirement of runing the workshop.
+
+![Image](../../src/img/Setup/Cloud9-1.1.jpg)
 
 Your workspace should now look like this:
 
@@ -66,20 +69,6 @@ tmpfs           493M     0  493M   0% /dev/shm
 ````
 
 Consequentlly, the storge of our Cloud9 work spaces is 100GB now.
-
-## Increase the number of CPU and Memory for the Cloud9 
-
-In this step, we will increase the amount of CPU and memory storage in Cloud9. To performe this modification, we need to stop the instances by selecting: "Instance state -> Stop Instance". It may take serveral second for the system to stop the instance.
-
-![Image](../../src/img/Setup/Cloud9-13.jpg)
-
-Afterwards, we will change the instance type of the Cloud9 workspace. To performe this modification, select: "Actions -> Change instances type". In the pop-up menu, we can select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimun requirement of runing the workshop.
-
-![Image](../../src/img/Setup/Cloud9-14.jpg)
-
-![Image](../../src/img/Setup/Cloud9-15.jpg)
-
-Finially, we need to restart the Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
 
 ## Attach the IAM role to the Cloud9 Workspace
 

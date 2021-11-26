@@ -2,7 +2,6 @@
 layout: default
 title: Launch template Setup
 parent: Supplementary
-nav_order: 1
 ---
 
 # Create AWS Batch Environmnet
