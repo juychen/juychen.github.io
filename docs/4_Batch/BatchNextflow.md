@@ -15,7 +15,7 @@ Firstly, the user-specific Nextflow configuration file.
 
 
 ```shell
-cd ~/environment/nextflow-tutorial/
+cd ~/environment/aws-workshop/
 cat > $HOME/.nextflow/config  << EOF
 profiles {
   standard {

@@ -111,6 +111,7 @@ We can store the output files to the S3 to reduce cost of mantianing EC2 instanc
 export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
 aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
 aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
+echo "BUCKET_NAME_RESULTS=${BUCKET_NAME_RESULTS}" |tee -a ~/.bashrc 
 echo ${BUCKET_NAME_RESULTS}
 ```
 
@@ -146,25 +147,29 @@ Succeeded   : 2
 Then, we can list the result in the S3 bucket
 
 ``` shell
-aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
+aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/alignment_results/
 ```
 
 The result should be somthing similar to this.
 ``` shell
-workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/SRR11537951/
+workshop-user-00:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESULTS}/outputs/alignment_results/
                            PRE counts_unfiltered/
-2021-11-21 13:44:59          0 
-2021-11-21 13:45:09   12533760 10x_version2_whitelist.txt
-2021-11-21 13:45:09        574 inspect.json
-2021-11-21 13:45:17       2078 kb_info.json
-2021-11-21 13:45:06   83672160 matrix.ec
-2021-11-21 13:45:02  126870353 output.bus
-2021-11-21 13:45:12   77054193 output.unfiltered.bus
-2021-11-21 13:45:08        454 run_info.json
-2021-11-21 13:45:08   18376572 transcripts.txt
+                           PRE figures/
+                           PRE write/
+2021-11-26 10:06:05          0 
+2021-11-26 10:06:13   12533760 10x_version2_whitelist.txt
+2021-11-26 10:06:13        574 inspect.json
+2021-11-26 10:06:20       2167 kb_info.json
+2021-11-26 10:06:11   83672160 matrix.ec
+2021-11-26 10:06:20     182785 meta.csv
+2021-11-26 10:06:08  126870353 output.bus
+2021-11-26 10:06:16   77054193 output.unfiltered.bus
+2021-11-26 10:06:13        460 run_info.json
+2021-11-26 10:06:13   18376572 transcripts.txt
+2021-11-26 10:06:22       1921 viral_cells.csv
 ```
 
-You can select go the the path: "/aws-workshop/outputs/alignment_results/figures/umapumapplot.pdf" to see the result similar to this:
+You can select go the [S3 bucket](https://s3.console.aws.amazon.com/s3/home)  path: "s3://${BUCKET_NAME_RESULTS}/outputs/alignment_results/figures/umapumapplot.pdf" to see the result similar to this:
 
 ![Image](../../src/img/Nextflow/Nextflow-local1.jpg)
 
