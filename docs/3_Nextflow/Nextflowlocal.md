@@ -4,11 +4,21 @@ title: Nextflow local run
 parent: Nextflow
 nav_order: 2
 ---
+
 # Nextflow and scRNA-Seq processing
+{: .no_toc }
 
-Attached is the Nextflow script we apply in this tutoruaial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/latest/getstarted.html) for more information about nextflow syntax and usage.
+## Table of contents
+{: .no_toc .text-delta }
 
+1. TOC
+{:toc}
 
+---
+
+Attached is the Nextflow script we apply in this tutoruaial. It is a simple script using KB to align scRNA-Seq reads to a KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. After the aligment is finished, we will collect the count matirx file "adata.h5ad" as input of the Scanpy based python script named "analysis.py". In the python scirpt, we find the cells with viral UMIs, and perform simple visualization of the cells by UMAP.
+
+You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/latest/getstarted.html) for more information about nextflow syntax and usage.
 
 ```shell
 #!/usr/bin/env nextflow
@@ -40,33 +50,49 @@ Channel
  * 1. Mapping
  */
 process Map {
-    
-    publishDir params.outdir, mode: 'copy', overwrite: false
-
     input:
     tuple val(SRR_id), file(reads) from read_pairs_ch
     path ref from params.refdir
     output:
     val SRR_id into id_ch
-    file("${SRR_id}/") into results_ch
+    file("alignment_results/") into results_ch
 
     shell
     """
-    kb count -x=10XV2 -g="${ref}/transcripts_to_genes.txt"  -i="${ref}/transcriptome.idx" -o="${SRR_id}" --tmp="~/kbtemp" --h5ad \
+    kb count -x=10XV2 -g="${ref}/transcripts_to_genes.txt"  -i="${ref}/transcriptome.idx" -o="alignment_results" --tmp="~/kbtemp" --h5ad \
     "${params.baseDir}/${SRR_id}_1.fastq.gz" \
     "${params.baseDir}/${SRR_id}_2.fastq.gz" \
     """
 }
+/*
+ * 2. Analysis
+ */
+process Analysis {
+    cpus 4
+    memory '8 GB'
+    publishDir "${params.outdir}", mode: "copy"
+    input:
+    file result from results_ch
+    output:
+    file('alignment_results') into results2_ch
+    
+    shell
+    """
+    cp ${params.codebase}/meta.csv alignment_results/meta.csv
+    cd alignment_results
+    mkdir write
+    python ${params.codebase}/analysis.py "counts_unfiltered/adata.h5ad"
+    cd ../
+    """
+}
 ```
+## Doload data from the AWS S3 bucket
 
-Pull Image and download files
-To run the docker image locally, we need to pull the docker image from the Amazon ECR 
+Before we started, we need to download the toy read files and the reference genome from out S3 bucket.
 
-```shell
-docker pull public.ecr.aws/b6a4h2a6/kb_workshop:latest
-```
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements.
 
-Afterwards, we downlaod the read files and the reference from out S3 bucket using the following command:
+We can download neccessarry files using the following command:
 
 ```shell
 aws s3 cp s3://awsscwsbucket/ref/transcripts_to_genes.txt ~/environment/aws-workshop/ref/transcripts_to_genes.txt & \
@@ -75,9 +101,28 @@ aws s3 cp s3://awsscwsbucket/seqs/SRR11537951_toy/SRR11537951_1.fastq.gz ~/envir
 aws s3 cp s3://awsscwsbucket/seqs/SRR11537951_toy/SRR11537951_2.fastq.gz ~/environment/aws-workshop/data/SRR11537951_2.fastq.gz;
 ```
 
+Notices that this is a toy example that we randomly sample reads (with size < 1GB) from the original fastq file. Therefore the result looks a bit strange.
+
+## Redirect results to the S3 bucket
+
+We can store the output files to the S3 to reduce cost of mantianing EC2 instances and EBS storages. The following command will create our S3 bucket to store the result. 
+
 ``` shell
-nextflow  run script0.nf  
-``` 
+export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
+aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
+aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
+echo ${BUCKET_NAME_RESULTS}
+```
+
+In this step, you will create a bucket on the AWS S3. It will have a fold name like "nextflow-spot-batch-result-19074-1637920838". Remember to **Save the AWS bucket location**. This location will be the path that store your experiment result. Also, this buck will be used in the following step. The above command will show the result of the result bucket.
+
+Here, we can run the nextflow script.
+
+``` shell
+nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
+```
+
+The script will take around 5 minutes to run. A successfull run of the script will output somthint like this：
 
 ``` shell
 N E X T F L O W  ~  version 21.10.3
@@ -96,23 +141,6 @@ Completed at: 26-Nov-2021 09:01:21
 Duration    : 4m 49s
 CPU hours   : 0.1
 Succeeded   : 2
-```
-
-## Redirect results to the S3 bucket
-
-Create our S3 bucket to store the result. 
-``` shell
-export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
-aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
-aws s3api put-bucket-tagging --bucket ${BUCKET_NAME_RESULTS} --tagging="TagSet=[{Key=nextflow-workshop,Value=true}]"
-echo ${BUCKET_NAME_RESULTS}
-```
-In this step, you will create a bucket on the AWS S3. It will have a fold name like "nextflow-spot-batch-result-14962-1637501981". Remember to **Remember the AWS bucket location**. This location will be the path that store your experiment result. Also, this buck will be used in the following step. The above command will show the result of the result bucket.
-
-Here, we can run the nextflow script again.
-
-``` shell
-nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
 ```
 
 Then, we can list the result in the S3 bucket
@@ -135,6 +163,12 @@ workshop_user0:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RESUL
 2021-11-21 13:45:08        454 run_info.json
 2021-11-21 13:45:08   18376572 transcripts.txt
 ```
+
+You can select go the the path: "/aws-workshop/outputs/alignment_results/figures/umapumapplot.pdf" to see the result similar to this:
+
+![Image](../../src/img/Nextflow/Nextflow-local1.jpg)
+
+
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowDocker.html){: .btn }
 [Next Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn .btn-purple }
