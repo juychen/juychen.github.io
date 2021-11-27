@@ -22,5 +22,5 @@ During this workshop you will implement a proof of concept of AWS. The goal of t
 - Nextflow: language reproduce scientific workflows
 
 <div class="code-example" markdown="1">
-[Start](https://juychen.github.io/docs/Introduction){: .btn .btn-purple }
+[Start](https://juychen.github.io/docs/1_Introduction/Introduction.html){: .btn .btn-purple }
 </div>
