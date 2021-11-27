@@ -5,7 +5,7 @@ parent: Setup
 nav_order: 3
 ---
 # Nextflow
-This section introduce the installation of nextflow and its dependencies.
+This section introduces the installation of nextflow and its dependencies.
 
 ## Clone the tutorial
 
@@ -26,7 +26,7 @@ sudo yum install -y graphviz jq
 
 ## AWS Region
 
-Even though we are depending on an IAM Role and not local permissions some tools depend on having the AWS_REGION defined as environment variable - let's add it to our login shell configuration.
+Even though we are depending on an IAM Role and not local permissions some tools depend on having the AWS_REGION defined as an environment variable - let's add it to our login shell configuration.
 
 
 ```shell

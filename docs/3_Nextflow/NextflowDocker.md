@@ -18,14 +18,14 @@ nav_order: 1
 
 ## Overview of the process
 
-Attached is the Nextflow script we apply in this tutorial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input reads files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. 
+Attached is the Nextflow script we apply in this tutorial. It is a simple script using KB to align scRNA-Seq reads to KB indexed reference transcriptome (including transcripts_to_genes.txt and transcriptome.idx) and generate a count matrix. The Nextflow script will scan the input folder "data/" to find a pair of read files. Names of the input read files should have the format of "(SRR run id)_1.fastq.gz" for barcode reads, and "(SRR run id)_2.fastq.gz" for cDNA reads. 
 ## Introduction to containers
 
 ![Image](../../src/img/Nextflow/Nextflow-docker-1.png)
 
-A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
-The container (/aws-workshop/Dockerfile) in the presnet workshop look like this:
+The container (/aws-workshop/Dockerfile) in the present workshop look like this:
 
 ```docker
 FROM python:3.7.5-slim
@@ -37,7 +37,7 @@ ENV PATH="/usr/local/bin:${PATH}"
 RUN pip install --upgrade pip && pip install kb-python awscli scanpy[leiden]
 ```
 
-This is a simple container that with python packages "kb-python" "awscli" and "scanpy". A container is similar to a small virual machine. When you build a docker image, those commands in the dockerfile are command in the console helping you to setup softwares and environments. We have build a runnable docker image stored in the AWS ECR repositoy. You can download it by the following command: 
+This is a simple container with python packages "kb-python" "awscli" and "scanpy". A container is similar to a small virtual machine. When you build a docker image, those commands in the docker file are commands in the console helping you to set up software and environments. We have built Docker images stored in the AWS ECR repository. You can download it by the following command: 
 
 
 ```shell
@@ -61,7 +61,7 @@ Status: Downloaded newer image for public.ecr.aws/b6a4h2a6/kb_workshop:latest
 public.ecr.aws/b6a4h2a6/kb_workshop:latest
 ```
 
-Afterwards, you can try to head into the container we pull to look around using the following command:
+Afterward, you can try to head into the container we pull to look around using the following command:
 
 ```shell
 docker run -it public.ecr.aws/b6a4h2a6/kb_workshop:latest /bin/bash
@@ -92,7 +92,7 @@ optional arguments:
   --list      Display list of supported single-cell technologies
 ```
 
-Then you have correctlly pulled the image. You can exit the container using the exit command:
+Then you have correctly pulled the image. You can exit the container using the exit command:
 
 ```shell
 root@e6d2ce35c6dc:/# exit

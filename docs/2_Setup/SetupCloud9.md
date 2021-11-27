@@ -20,7 +20,7 @@ nav_order: 1
 
 Create a Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](https://console.aws.amazon.com/cloud9/home).
 
-- Select Create environment
+- Select Create an environment
 - Name it "aws-workshop-userxxx" which "userxx" is your user name to better identification of your instance
 - Select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimun requirement of runing the workshop.
 
@@ -30,11 +30,11 @@ Your workspace should now look like this:
 
 ![Image](../../src/img/Setup/Cloud9-1.jpg)
 
-## Increase the storgate of the Cloud9 EBS
+## Increase the storage of the Cloud9 EBS
 
 The default 10GB storage, 1 CPU, and 1GB memory of Cloud9 workspace is quite small. Thus, it is good for us to increase the computational resources used by the Cloud9 instance for the tutorial.
 
-Firstly, we increase the storage of the instance. To increase the EBS volume, please perfrom as follows:
+Firstly, we increase the storage of the instance. To increase the EBS volume, please perform as follows:
 1. Select the Cloud9 instance in the [EC2 console](https://console.aws.amazon.com/ec2/v2/home#Instances).
 2. Click the "Storage" chart
 3. Roll down, explore, and click on the "Volume ID" in the list
@@ -68,11 +68,11 @@ tmpfs           493M     0  493M   0% /dev/shm
 /dev/xvda1       99G  8.0G   91G   9% /
 ````
 
-Consequentlly, the storge of our Cloud9 work spaces is 100GB now.
+Consequently, the storge of our Cloud9 workspaces is 100GB now.
 
 ## Attach the IAM role to the Cloud9 Workspace
 
-An IAM role is an IAM identity that you can create in your account that has specific permissions. It is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. We need to grant neccessary permissions to the Cloud9 environments to run the tutorial.
+An IAM role is an IAM identity that you can create in your account that has specific permissions. It is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. We need to grant necessary permissions to the Cloud9 environments to run the tutorial.
 
 - Select the Cloud9 instance in the [EC2 console](https://console.aws.amazon.com/ec2/v2/home#Instances).
 
@@ -80,7 +80,7 @@ An IAM role is an IAM identity that you can create in your account that has spec
 
 ![Image](../../src/img/Setup/Cloud9-10.jpg)
 
-- Choose "aws-workshop-admin" from the IAM Role drop down, and click "Save" (we created this following the [IAM role setting page](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
+- Choose "aws-workshop-admin" from the IAM Role drop-down, and click "Save" (we created this following the [IAM role setting page](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
 
 
 ![Image](../../src/img/Setup/Cloud9-11.jpg)
@@ -88,7 +88,7 @@ An IAM role is an IAM identity that you can create in your account that has spec
 Here, we have attached the IAM role to our Cloud9 environment.
 
 ## Managed Credential Handling from Cloud9
-To not have Cloud9 overwrite the IAM roles with temporary crendentials, we will disable temporary crendential management within Cloud9.
+To not have Cloud9 overwrite the IAM roles with temporary credentials, we will disable temporary credential management within Cloud9.
 
 ![Image](../../src/img/Setup/Cloud9-12.jpg)
 

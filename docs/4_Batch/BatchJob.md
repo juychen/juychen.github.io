@@ -16,19 +16,19 @@ nav_order: 3
 
 ---
 
-In this section, we will learn to creat Batch jobs trough the AWS Batch website. However, since it would take long to finish an KB job. We just try to test whether KB is correctally configured in our created container in the present section.
+In this section, we will learn to create Batch jobs through the AWS Batch website. However, since it would take a long tim to finish a KB job. We just try to test whether KB is correctly configured in our created container in the present section.
 
 ## Create a job definition
-In the previous steps we created resources needed to run AWS Batch jobs. Now we can creat a job in the AWS console
+In the previous steps, we created the resources needed to run AWS Batch jobs. Now we can create a job in the AWS console
 
-Create an AWS Batch Environment at: [https://console.aws.amazon.com/batch/home#job-definition](https://console.aws.amazon.com/batch/home#job-definition). 
+Create an AWS Batch Environment at [https://console.aws.amazon.com/batch/home#job-definition](https://console.aws.amazon.com/batch/home#job-definition). 
 
 - Select "Job Definition" on the left panel
-- Select "Create" to creat a new job definition
+- Select "Create" to create a new job definition
 
 ![Image](../../src/img/Batch/Batch-job1.jpg)
 
-- Enter a name for you definition such as "touch-kb-definition-userxxx"
+- Enter a name for your definition such as "touch-kb-definition-userxxx"
 - Select "EC2" in the Platform type
 
 ![Image](../../src/img/Batch/Batch-job2.jpg)
@@ -38,7 +38,7 @@ Create an AWS Batch Environment at: [https://console.aws.amazon.com/batch/home#j
 
 ![Image](../../src/img/Batch/Batch-job3.jpg)
 
-- Set vCpus as 1 and Memory around 512 because we juet need to check the kb status in the container.
+- Set vCpus as 1 and Memory around 512 because we just need to check the kb status in the container.
 - Select "aws-ws-job-definition" in Job and Execution role.
 - Left other option as default and select "Create" 
 
@@ -48,7 +48,7 @@ Create an AWS Batch Environment at: [https://console.aws.amazon.com/batch/home#j
 ## Submit and run a Job
 
 - Select "Job" on the left panel
-- Select "Submit new job" to creat a new job
+- Select "Submit new job" to create a new job
 
 ![Image](../../src/img/Batch/Batch-job5.jpg)
 
@@ -66,15 +66,15 @@ kb -h "&>" kbout ; cat kbout
 It is a code to call KB help documentation and show it in the standard output stream.
 
 - Set vCpus as 1 and Memory as 500
-- Leave other filed as default and submit your job
+- Leave other files as default and submit your job
 
 ![Image](../../src/img/Batch/Batch-job7.jpg)
 
-Now a simple job to call KB help funtion is submit to the job queue you creat.
+Now a simple job to call KB help function is submitted to the job queue you create.
 
-## Minitoring Job
+## Monitoring Job
 
-Heading back to the [dashboard](https://console.aws.amazon.com/batch/home#dashboard), you can see the overview of the number of task runing in the job queue. To monitor your runing jobs, you can click the number below the lable "RUNNING".
+Heading back to the [dashboard](https://console.aws.amazon.com/batch/home#dashboard), you can see the overview of the number of tasks running in the job queue. To monitor your running jobs, you can click the number below the label "RUNNING".
 
 ![Image](../../src/img/Batch/Batch-job8.jpg)
 
@@ -82,7 +82,7 @@ Here, you can find the job we submit previously. Click the job name to go to the
 
 ![Image](../../src/img/Batch/Batch-job9.jpg)
 
-Inside the infomation page, you can click the link below the "Log stream name" label. This is where the ouput of the program store. It will record any information output within the stand ouput stream of the console. Also, the console output will refresh contiuniously along with your program process.
+Inside the information page, you can click the link below the "Log stream name" label. This is where the output of the program stored. It will record any information output within the stand output stream of the console. Also, the console output will refresh continuously along with your program process.
 
 ![Image](../../src/img/Batch/Batch-job10.jpg)
 

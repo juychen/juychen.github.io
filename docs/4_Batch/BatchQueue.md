@@ -16,24 +16,24 @@ nav_order: 2
 
 ---
 
-## Setup Batch Compute Envirionment
+## Setup Batch Compute Environment
 
 We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
 
 - Select "Job queues" on the left panel
-- Select "Create" to creat a new job queue
+- Select "Create" to create a new job queue
 
 ![Image](../../src/img/Batch/Batch-queue1.jpg)
 
-- Name you job queue to "job-queue-userxxx" accodring to your user name.
+- Name your job queue to "job-queue-userxxx" according to your user name.
 
 ![Image](../../src/img/Batch/Batch-queue2.jpg)
 
-- Select you compute environment to "spot-ce-userxxx" which you created in the previous step
+- Select your compute environment to "spot-ce-userxxx" which you created in the previous step
 
 ![Image](../../src/img/Batch/Batch-queue3.jpg)
 
-- Select "Create" to creat a new job queue
+- Select "Create" to create a new job queue
 
 
 <div class="code-example" markdown="1">

@@ -86,9 +86,9 @@ process Analysis {
     """
 }
 ```
-## Doload data from the AWS S3 bucket
+## Download data from the AWS S3 bucket
 
-Before we started, we need to download the toy read files and the reference genome from out S3 bucket.
+Before we started, we need to download the toy read files and the reference genome from our S3 bucket.
 
 Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements.
 
@@ -105,7 +105,7 @@ Notices that this is a toy example that we randomly sample reads (with size < 1G
 
 ## Redirect results to the S3 bucket
 
-We can store the output files to the S3 to reduce cost of mantianing EC2 instances and EBS storages. The following command will create our S3 bucket to store the result. 
+We can store the output files to the S3 to reduce the cost of maintaining EC2 instances and EBS storage. The following command will create our S3 bucket to store the result. 
 
 ``` shell
 export BUCKET_NAME_RESULTS=nextflow-spot-batch-result-${RANDOM}-$(date +%s)
@@ -115,7 +115,7 @@ echo "BUCKET_NAME_RESULTS=${BUCKET_NAME_RESULTS}" |tee -a ~/.bashrc
 echo ${BUCKET_NAME_RESULTS}
 ```
 
-In this step, you will create a bucket on the AWS S3. It will have a fold name like "nextflow-spot-batch-result-19074-1637920838". Remember to **Save the AWS bucket location**. This location will be the path that store your experiment result. Also, this buck will be used in the following step. The above command will show the result of the result bucket.
+In this step, you will create a bucket on the AWS S3. It will have a fold name like "nextflow-spot-batch-result-19074-1637920838". Remember to **Save the AWS bucket location**. This location will be the path that stores your experiment result. Also, this bucket will be used in the following step. The above command will show the result of the resulting bucket.
 
 Here, we can run the nextflow script.
 
@@ -123,7 +123,7 @@ Here, we can run the nextflow script.
 nextflow run script0.nf --outdir=s3://${BUCKET_NAME_RESULTS}/outputs
 ```
 
-The script will take around 5 minutes to run. A successfull run of the script will output somthint like this：
+The script will take around 5 minutes to run. A successful run of the script will output something like this：
 
 ``` shell
 N E X T F L O W  ~  version 21.10.3

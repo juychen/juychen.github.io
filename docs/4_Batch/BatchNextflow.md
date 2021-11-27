@@ -49,14 +49,14 @@ Nextflow will evaluate a nextflow.config file next to the script we are executin
 
 ## Create result S3 Bucket
 
-Remember that have a S3 bucket that keeps the results in ${BUCKET_NAME_RESULTS}.
+Remember that you have an S3 bucket that keeps the results in ${BUCKET_NAME_RESULTS}.
 
 ```shell
 echo ${BUCKET_NAME_RESULTS}
 nextflow-spot-batch-result-20033-1587976463
 ```
 
-Here we would like to depoly another bucket to store the temporary files that AWS batch need to run in AWS Batch
+Here we would like to deploy another bucket to store the temporary files that AWS batch need to run in AWS Batch
 
 ```shell
 export BUCKET_NAME_TEMP=nextflow-spot-batch-temp-${RANDOM}-$(date +%s)
@@ -97,7 +97,7 @@ Succeeded   : 1
 
 ## Monitoring Jobs
 
-The monitoring of job is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
+The monitoring of jobs is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
 
 ## View pricing of the program
 
@@ -105,7 +105,7 @@ To check the bill of our previous run, we can go to the EC2 Dashboard and find t
 
 ![Image](../../src/img/Batch/Batch-price1.jpg)
 
-This saving summary page shows the price. We know that to align a 12GB scRNA-Seq sample takes $0.17. Thanks to the spot instances, we can save 79% of money compare to host a on-demand EC2 instance.
+This saving summary page shows the price. We know that to align a 12GB scRNA-Seq sample takes $0.17. Thanks to the spot instances, we can save 79% of money compared to hosting an on-demand EC2 instance.
 
 ![Image](../../src/img/Batch/Batch-price2.jpg)
 
