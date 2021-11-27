@@ -173,7 +173,7 @@ You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3
 
 ![Image](../../src/img/Nextflow/Nextflow-local0.jpg)
 
-You can download it to your own computer via the browser or click to open it. Te result UMAP plot should be similar to this: 
+You can download it to your own computer via the browser or click to open it. The result UMAP plot should be similar to this: 
 
 ![Image](../../src/img/Nextflow/Nextflow-local1.jpg)
 

@@ -99,6 +99,12 @@ Succeeded   : 1
 
 The monitoring of jobs is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
 
+## View results
+You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batch/alignment_results/figures/umapumapplot.pdf" page. Click to open it. The result UMAP plot should be similar to this: 
+
+![Image](../../src/img/Batch/Batch-result.jpg)
+
+
 ## View pricing of the program
 
 To check the bill of our previous run, we can go to the EC2 Dashboard and find the Spot Request section at [https://console.aws.amazon.com/ec2sp/v2/home#/spot](https://console.aws.amazon.com/ec2sp/v2/home#/spot). Click saving summary to view the cost we saved by applying spot instances.
