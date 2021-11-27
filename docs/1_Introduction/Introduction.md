@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Introduction
+Parent
 nav_order: 1
-permalink: docs/Introduction
 ---
 
 # Introduction
@@ -30,5 +30,5 @@ Our scRNA-Seq data (SRA Run selector accession number: [SRR11537951](https://www
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io){: .btn }
-[Next Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/1_Introduction/Account.html){: .btn .btn-purple }
 </div>
