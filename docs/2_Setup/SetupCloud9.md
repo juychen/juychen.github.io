@@ -22,7 +22,7 @@ Create a Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](htt
 
 - Select Create an environment
 - Name it "aws-workshop-userxxx" which "userxx" is your user name to better identification of your instance
-- Select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimum requirement of running the workshop.
+- Select the instance type of "t3.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimum requirement of running the workshop.
 
 ![Image](../../src/img/Setup/Cloud9-1.1.jpg)
 

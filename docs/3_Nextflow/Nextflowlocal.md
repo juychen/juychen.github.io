@@ -169,7 +169,11 @@ workshop-user-00:~/environment/aws-workshop (main) $ aws s3 ls ${BUCKET_NAME_RES
 2021-11-26 10:06:22       1921 viral_cells.csv
 ```
 
-You can select go the [S3 bucket](https://s3.console.aws.amazon.com/s3/home)  path: "s3://${BUCKET_NAME_RESULTS}/outputs/alignment_results/figures/umapumapplot.pdf" to see the result similar to this:
+You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/outputs/alignment_results/figures/umapumapplot.pdf" page. The page should be something like this:
+
+![Image](../../src/img/Nextflow/Nextflow-local0.jpg)
+
+You can download it to your own computer via the browser or click to open it. Te result UMAP plot should be similar to this: 
 
 ![Image](../../src/img/Nextflow/Nextflow-local1.jpg)
 
