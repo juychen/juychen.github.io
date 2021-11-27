@@ -19,7 +19,7 @@ In our tutorial, the pipeline of Nextflow and Batch deal with jobs by the follow
 3. Once jobs are placed, the scheduler evaluates the Compute Environments and adjusts
 the compute capacity to allow the jobs to run.
 4. The job (packaged by the container) will run in the computational environment created.
-5. The job output will be transferred and stored to the S3 bucket.
+5. The job output will be transferred and stored in the S3 bucket.
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn }

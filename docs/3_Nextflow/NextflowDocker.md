@@ -92,7 +92,7 @@ optional arguments:
   --list      Display list of supported single-cell technologies
 ```
 
-Then you have correctly pulled the image. You can exit the container using the exit command:
+Remember that we have not installed the KB software in our EC2 instance. Therefore this KB information implies that you have correctly pulled and run the image. You can exit the container using the exit command:
 
 ```shell
 root@e6d2ce35c6dc:/# exit

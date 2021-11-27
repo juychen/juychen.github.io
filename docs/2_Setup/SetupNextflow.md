@@ -5,11 +5,11 @@ parent: Setup
 nav_order: 3
 ---
 # Nextflow
-This section introduces the installation of nextflow and its dependencies.
+This section introduces the installation of Nextflow and its dependencies.
 
 ## Clone the tutorial
 
-We will use the code from our repository. It contains the nextflow scripts and the required
+We will use the code from our repository. It contains the Nextflow scripts and the required
 
 ```shell
 git clone https://github.com/juychen/aws-workshop.git

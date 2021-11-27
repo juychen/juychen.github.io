@@ -22,7 +22,7 @@ Create a Cloud9 Environment at: [https://console.aws.amazon.com/cloud9/home](htt
 
 - Select Create an environment
 - Name it "aws-workshop-userxxx" which "userxx" is your user name to better identification of your instance
-- Select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimun requirement of runing the workshop.
+- Select the instance type of "t3a.2xlarge". This instance type will have 32GB of memory and 8 CPUs to meet the minimum requirement of running the workshop.
 
 ![Image](../../src/img/Setup/Cloud9-1.1.jpg)
 
@@ -59,7 +59,7 @@ sudo xfs_growfs $(df -h |awk '/^\/dev/{print $1}')
 df --human-readable
 ```
 
-The root file-system should now show 99GB.
+The root file system should now show 99GB.
 
 ```shell
 Filesystem      Size  Used Avail Use% Mounted on
@@ -68,7 +68,7 @@ tmpfs           493M     0  493M   0% /dev/shm
 /dev/xvda1       99G  8.0G   91G   9% /
 ````
 
-Consequently, the storge of our Cloud9 workspaces is 100GB now.
+Consequently, the storage of our Cloud9 workspaces is 100GB now.
 
 ## Attach the IAM role to the Cloud9 Workspace
 

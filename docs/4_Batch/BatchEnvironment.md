@@ -43,7 +43,7 @@ In the compute environments page, set your preference of the compute environment
 - Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
  
 
-Because we have mentioned in the previous section that the storage of EC2 instance is not enough for the scRNA-Seq preprocessing. 
+We apply this template because we have mentioned in the previous section that the storage of EC2 instance is not enough for the scRNA-Seq preprocessing. 
 
 ![Image](../../src/img/Batch/Batch-env3.1.jpg)
 
