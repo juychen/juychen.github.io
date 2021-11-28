@@ -66,9 +66,27 @@ Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        483M   60K  483M   1% /dev
 tmpfs           493M     0  493M   0% /dev/shm
 /dev/xvda1       99G  8.0G   91G   9% /
-````
+```
 
 Consequently, the storage of our Cloud9 workspaces is 100GB now.
+
+## Download data from the AWS S3 bucket
+
+After we have increased the number of storage, we can download the toy read files and the reference genome from our S3 bucket.
+
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements.
+
+We can download neccessarry files using the following command:
+
+```shell
+aws s3 cp s3://awsscwsbucket/ref/transcripts_to_genes.txt ~/environment/aws-workshop/ref/transcripts_to_genes.txt & \
+aws s3 cp s3://awsscwsbucket/ref/transcriptome.idx ~/environment/aws-workshop/ref/transcriptome.idx & \
+aws s3 cp s3://awsscwsbucket/seqs/SRR11537951_toy/SRR11537951_1.fastq.gz ~/environment/aws-workshop/data/SRR11537951_1.fastq.gz &\
+aws s3 cp s3://awsscwsbucket/seqs/SRR11537951_toy/SRR11537951_2.fastq.gz ~/environment/aws-workshop/data/SRR11537951_2.fastq.gz;
+```
+
+Notices that this is a toy example that we randomly sample reads (with size < 1GB) from the original fastq file. Therefore the result looks a bit strange.
+You directly head to the next process and let the download in the background.
 
 ## Attach the IAM role to the Cloud9 Workspace
 
