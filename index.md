@@ -10,8 +10,11 @@ The content of this workshop is derived from a tutorial [Nextflow with Batch](ht
 
 ## Overview
 During this workshop, you will implement a proof of concept of AWS. The goal of this workshop is to get familiar with the concepts of Nextflow and AWS Batch.
+Then runing a pipeline with simple scRNA-Seq as follows:
 
-## AWS concepts
+![Image](src/img/Setup/Intro.jpg)
+
+
 - EC2: cloud server instances
 - EC2 Spot: benefit from unused EC2 capacity
 - Cloud9: cloud coding IDE

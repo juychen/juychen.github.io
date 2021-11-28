@@ -37,7 +37,7 @@ profiles {
     aws.region = '${AWS_REGION}'
     process.container = 'public.ecr.aws/b6a4h2a6/kb_workshop:latest'
     process.executor = 'awsbatch'
-    process.queue = [***Fill your own job queue name here***]
+    process.queue = '***Fill your own job queue name here***'
   }
 }
 EOF
