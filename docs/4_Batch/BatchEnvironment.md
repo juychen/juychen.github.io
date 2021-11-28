@@ -48,7 +48,7 @@ We apply this template because we have mentioned in the previous section that th
 
 ![Image](../../src/img/Batch/Batch-env3.1.jpg)
 
-![Image](../../src/img/Batch/Batch-env4.jpg)
+![Image](../../src/img/Batch/Batch-env4-5.jpg)
 
 Leave other settings of the environment as default and create an environment.
 

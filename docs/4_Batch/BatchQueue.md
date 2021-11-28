@@ -33,6 +33,8 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 ![Image](../../src/img/Batch/Batch-queue3.jpg)
 
+![Image](../../src/img/Batch/Batch-env4.jpg)
+
 - Select "Create" to create a new job queue
 
 
