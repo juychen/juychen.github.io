@@ -6,10 +6,10 @@ nav_order: 0
 
 ## Welcome to the AWS work shop
 
-The content of this workshop is derived from a tutorial (Nextflow with Batch)[https://genomics-nf.workshop.aws/]. But we change the goal to run our viral calling pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
+The content of this workshop is derived from a tutorial [Nextflow with Batch](https://genomics-nf.workshop.aws/). But we change the goal to run our viral calling pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
 
 ## Overview
-During this workshop you will implement a proof of concept of AWS. The goal of this workshop is  to get familiar with the concepts of nextflow and AWS Batch.
+During this workshop, you will implement a proof of concept of AWS. The goal of this workshop is to get familiar with the concepts of Nextflow and AWS Batch.
 
 ## AWS concepts
 - EC2: cloud server instances

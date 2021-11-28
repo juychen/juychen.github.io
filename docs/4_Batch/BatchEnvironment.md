@@ -28,13 +28,14 @@ Create an AWS Batch Environment at [https://console.aws.amazon.com/batch/home](h
 In the compute environments page, set your preference of the compute environment as follows:
 - Select "Managed" in the compute environment type
 - Change the environment name in the compute environment name. We suggest that you should use "spot-ce-userxxx" according to your own username.
+- Open the "Additional settings: service role, instance role, EC2 key pair" pannel
 - Select "aws-workshop-batch" in the service role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
 - Select "aws-workshop-admin" in the instance role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
 
 ![Image](../../src/img/Batch/Batch-env2.jpg)
 
 - Select "Spot" in the provisioning model in order to save money
-- Set "8" in both Minium and desired vCPU settings in order to run KB
+- Set "0" in both Minium and desired vCPU settings in order to run KB
 
 ![Image](../../src/img/Batch/Batch-env3.jpg)
 
@@ -48,6 +49,8 @@ We apply this template because we have mentioned in the previous section that th
 ![Image](../../src/img/Batch/Batch-env3.1.jpg)
 
 ![Image](../../src/img/Batch/Batch-env4.jpg)
+
+Leave other settings of the environment as default and create an environment.
 
 
 <div class="code-example" markdown="1">
