@@ -13,13 +13,13 @@ You can go to the website to login:
 ![Image](../../src/img/Setup/Intro-login.JPG)
 
 ## Import rules of using the AWS account
-The account you get have high level of permissions sinces they are neccessary to run the whole pipeline. I would like to express my gratitude for you if you can be careful to keep the data in our account save and sound. 
+The account you get a high level of permissions since they are necessary to run the whole pipeline. I would like to express my gratitude for you if you can be careful to keep the data in our account safe and sound. 
 
 I hope all you can remind the following rules: 
 - Make sure all services you play are within the Ohio (us-esat-2) region.
 - Do not terminate any instances or delete any services if you are not confident
-- Do not go to the IAM page to infere other accounts
-- Contact to the admin if you have problem creating and editing any services.
+- Do not go to the IAM page to infer other accounts
+- Contact the admin if you have a problem creating and editing any services.
 
 Thank you very much and hope you enjoy the workshop.
 

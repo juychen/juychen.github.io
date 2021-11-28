@@ -115,7 +115,7 @@ Inside the log stream, we can see the help information of the KB tool as we expe
 
 
 ## View results
-You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batch/alignment_results/figures/umapumapplot.pdf" page similar to what we did in the previous sectioin. Click to open it. The result UMAP plot should be similar to this: 
+You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batch/alignment_results/figures/umapumapplot.pdf" page similar to what we did in the previous section. Click to open it. The result UMAP plot should be similar to this: 
 
 ![Image](../../src/img/Batch/Batch-result.jpg)
 
