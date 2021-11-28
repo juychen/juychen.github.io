@@ -95,9 +95,24 @@ CPU hours   : 3.1
 Succeeded   : 1
 ```
 
-## Monitoring Jobs
+## Monitoring Job
 
-The monitoring of jobs is similar to the content we introduced in the previous section of [minitoring-job](https://juychen.github.io/docs/4_Batch/BatchJob.html#minitoring-job).
+Heading back to the [dashboard](https://console.aws.amazon.com/batch/home#dashboard), you can see the overview of the number of tasks running in the job queue. To monitor your running jobs, you can click the number below the label "RUNNING".
+
+![Image](../../src/img/Batch/Batch-job8.jpg)
+
+Here, you can find the job submited previously. Click the job name to go to the Jb information page.
+
+![Image](../../src/img/Batch/Batch-job9.jpg)
+
+Inside the information page, you can click the link below the "Log stream name" label. This is where the output of the program stored. It will record any information output within the stand output stream of the console. Also, the console output will refresh continuously along with your program process.
+
+![Image](../../src/img/Batch/Batch-job10.jpg)
+
+Inside the log stream, we can see the help information of the KB tool as we expect.
+
+![Image](../../src/img/Batch/Batch-job11.jpg)
+
 
 ## View results
 You can select go the [S3 bucket link here](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batch/alignment_results/figures/umapumapplot.pdf" page. Click to open it. The result UMAP plot should be similar to this: 
@@ -116,6 +131,6 @@ This saving summary page shows the price. We know that to align a 12GB scRNA-Seq
 ![Image](../../src/img/Batch/Batch-price2.jpg)
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/4_Batch/BatchJob.html){: .btn }
+[Previous Step](https://juychen.github.io/docs/4_Batch/BatchQueue.html){: .btn }
 [Next Step](http://example.com/){: .btn .btn-purple }
 </div>

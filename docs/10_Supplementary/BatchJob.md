@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Batch Jobs
-parent: Batch
-nav_order: 3
+parent: Supplementary
 ---
 
 # Create A Batch Simple Batch Job
