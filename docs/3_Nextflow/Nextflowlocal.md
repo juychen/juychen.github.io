@@ -179,11 +179,7 @@ You can download it to your own computer via the browser or click to open it. Th
 
 ![Image](../../src/img/Nextflow/Nextflow-local1.jpg)
 
-The umap plot is generated from a very small subset of reads from Liao et al.'s study. The figure looks a little strange because the number of cells is smaller while the sequencing depth is relatively low.
-
-In the first subplot, we display cell type information derived from the metadata in the same study. Due to the different processing pipelines, there may be some cells do not present in the original study.
-
-The fr
+The umap plot is generated from a very small subset of reads from Liao et al.'s study. In the first subplot, we display cell type information derived from the metadata in the same study. Due to the different processing pipelines, there may be some cells do not present in the original study. The third subplot highligthed the virus infected cells.  The second subplot looks a little strange because the number of cells is smaller while the sequencing depth is relatively low.
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowDocker.html){: .btn }
