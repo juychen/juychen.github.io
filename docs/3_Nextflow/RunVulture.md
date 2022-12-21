@@ -41,8 +41,8 @@ git checkout cloud-new-junyi
 
 ```shell
 # specify bucket names and save them into bash environment variables
-export BUCKET_NAME_TEMP=vulture_temp
-export BUCKET_NAME_RESULTS=vulture_results
+export BUCKET_NAME_TEMP=vulture-temp
+export BUCKET_NAME_RESULTS=vulture-results
 echo "BUCKET_NAME_TEMP=${BUCKET_NAME_TEMP}" |tee -a ~/.bashrc
 echo "BUCKET_NAME_RESULTS=${BUCKET_NAME_RESULTS}" |tee -a ~/.bashrc
 # create S3 buckets with specified bucket names 
@@ -55,7 +55,7 @@ aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
 Now we are about to run the first step of the Vulture pipeline i.e. mkref (genome reference making), execute the command below and wait it to be finished
 
 ```shell
-nextflow run scvh_mkref.nf -profile mkref -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchA -with-report logs/mkref_$(date +%s).html -bg &>> logs/mkref_$(date +%s).log;
+nextflow run scvh_mkref.nf -profile mkref -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchA -with-report mkref_$(date +%s).html -bg &>> mkref_$(date +%s).log;
 ```
 
 After the above job is done, you need to edit line in "scvh/nextflow/nextflow.config" file -> params.ref = 's3://scvhwf/humangenome/' to the actual S3 path where your genome file is i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA"
@@ -102,7 +102,7 @@ reads:
 Execute the command below to start the main analysis of Vulture.
 
 ```shell
-nextflow run scvh_full.nf -profile batchfull -params-file params.yaml -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchD -with-report logs/report_bam_$(date +%s).html -bg &>> logs/submitnf_bam_$(date +%s).log
+nextflow run scvh_full.nf -profile batchfull -params-file params.yaml -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchD -with-report report_bam_$(date +%s).html -bg &>> submitnf_bam_$(date +%s).log
 ```
 
 <div class="code-example" markdown="1">
