@@ -8,7 +8,7 @@ nav_order: 3
 
 [Nextflow](https://www.nextflow.io/about-us.html) is free open-source software distributed under the Apache 2.0 license developed by Seqera Labs. The software is used by scientists and engineers to write, deploy and share data-intensive, highly scalable, workflows on any infrastructure.
 
-It helps us to define workflows to run a pipeline composed of multiple programs. The reason we apply Nextflow is that it can be applied to workflows in containers or on a cloud computing platform.
+It helps us to define workflows to run the Vulture pipeline composed of multiple programs. The reason we build Vulture within Nextflow is that it can be applied to workflows in containers or on a cloud computing platform.
 
 You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/latest/getstarted.html) for more information about Nextflow syntax and usage.
 

@@ -16,35 +16,69 @@ nav_order: 1
 
 ---
 
-## Setup Batch Compute Environment
+## Setup Batch Vulture Compute Environment 1
 
 Create an AWS Batch Environment at [https://console.aws.amazon.com/batch/home](https://console.aws.amazon.com/batch/home).
 
-- Select "Compute environments" on the left panel
-- Select "Create" to create a new compute environments
+1. Select "Compute environments" on the left panel
+2. Select "Create" to create a new compute environments
 
 ![Image](../../src/img/Batch/Batch-env1.jpg)
 
 In the compute environments page, set your preference of the compute environment as follows:
-- Select "Managed" in the compute environment type
-- Change the environment name in the compute environment name. We suggest that you should use "spot-ce-userxxx" according to your own username.
+3. Select "Managed" in the compute environment type
+4. Change the environment name in the compute environment name. We suggest that you should use "scvh-CE-r5a4x".
 
 ![Image](../../src/img/Batch/Batch-env2.jpg)
 
-- Select "Spot" in the provisioning model in order to save money
-- Set "0" in both Minium and desired vCPU settings in order to run KB
-- Go back to the "Additional settings: service role, instance role, EC2 key pair" pannel below the "Managed" compute environment type.
-- Select "aws-workshop-batch" in the service role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
-- Select "aws-workshop-admin" in the instance role ([IAM role settings](https://juychen.github.io/docs/10_Supplementary/IAMsettings.html)). 
+5. Select "Spot" in the provisioning model in order to save money
+6. Set "0" in both Minium and desired vCPU settings
+7. Go back to the "Additional settings: service role, instance role, EC2 key pair" pannel below the "Managed" compute environment type.
+8. Select "aws-workshop-batch" in the service role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
+9. Select "aws-workshop-admin" in the instance role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
 
 ![Image](../../src/img/Batch/Batch-env3.jpg)
 
-- Select "m5.4xlarge" in the Allowed instance type because KB requires at least 8 Cores and around 32GB memory.
-- Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
-- Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
- 
+10. Select "r5a.4xlarge" in the Allowed instance type.
+11. Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
+12. Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
 
-We apply this template because we have mentioned in the previous section that the storage of EC2 instance is not enough for the scRNA-Seq preprocessing. 
+We apply this template because we have mentioned in the previous section that the storage of EC2 instance is not enough for the Vulture pipeline. 
+
+![Image](../../src/img/Batch/Batch-env3.1.jpg)
+
+![Image](../../src/img/Batch/Batch-env4-5.jpg)
+
+Leave other settings of the environment as default and create an environment.
+
+## Setup Batch Vulture Compute Environment 2 
+
+This basically follows the same steps as to create Compute Environment 1 above, but with different name and instance type.
+
+1. Select "Compute environments" on the left panel
+2. Select "Create" to create a new compute environments
+
+![Image](../../src/img/Batch/Batch-env1.jpg)
+
+In the compute environments page, set your preference of the compute environment as follows:
+3. Select "Managed" in the compute environment type
+4. Change the environment name in the compute environment name. We suggest that you should use "scvh-CE-3".
+
+![Image](../../src/img/Batch/Batch-env2.jpg)
+
+5. Select "Spot" in the provisioning model in order to save money
+6. Set "0" in both Minium and desired vCPU settings
+7. Go back to the "Additional settings: service role, instance role, EC2 key pair" pannel below the "Managed" compute environment type.
+8. Select "aws-workshop-batch" in the service role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
+9. Select "aws-workshop-admin" in the instance role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
+
+![Image](../../src/img/Batch/Batch-env3.jpg)
+
+10. Select "r5.8xlarge" in the Allowed instance type.
+11. Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
+12. Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
+
+We apply this template because we have mentioned in the previous section that the storage of EC2 instance is not enough for the Vulture pipeline. 
 
 ![Image](../../src/img/Batch/Batch-env3.1.jpg)
 

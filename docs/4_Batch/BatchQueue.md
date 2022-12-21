@@ -16,7 +16,7 @@ nav_order: 2
 
 ---
 
-## Setup Batch Compute Environment
+## Setup Batch Vulture Job Queue 1
 
 We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
 
@@ -25,11 +25,11 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 ![Image](../../src/img/Batch/Batch-queue1.jpg)
 
-- Name your job queue to "job-queue-userxxx" according to your user name.
+- Name your job queue to "jy-scvh-queue-r5a8x-1" according to your user name.
 
 ![Image](../../src/img/Batch/Batch-queue2.jpg)
 
-- Select your compute environment to "spot-ce-userxxx" which you created in the previous step
+- Select your compute environment to "scvh-CE-3" which you created in the previous step
 
 ![Image](../../src/img/Batch/Batch-queue3.jpg)
 
@@ -37,8 +37,28 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 - Select "Create" to create a new job queue
 
+## Setup Batch Vulture Job Queue 2
+
+We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
+
+- Select "Job queues" on the left panel
+- Select "Create" to create a new job queue
+
+![Image](../../src/img/Batch/Batch-queue1.jpg)
+
+- Name your job queue to "jy-scvh-queue-r5a4x-1" according to your user name.
+
+![Image](../../src/img/Batch/Batch-queue2.jpg)
+
+- Select your compute environment to "scvh-CE-r5a4x" which you created in the previous step
+
+![Image](../../src/img/Batch/Batch-queue3.jpg)
+
+![Image](../../src/img/Batch/Batch-env4.jpg)
+
+- Select "Create" to create a new job queue
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html){: .btn }
-[Next Step](https://juychen.github.io/docs/4_Batch/BatchNextflow.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/4_Batch/BatchJobMonitoring.html){: .btn .btn-purple }
 </div>
