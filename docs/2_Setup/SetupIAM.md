@@ -1,9 +1,20 @@
 ---
 layout: default
-title: IAM Setup
-parent: Supplementary
+title: Setup AWS IAM
+parent: Setup
+nav_order: 1
 ---
 
+# IAM
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 ## Create an IAM role for your Workspace
 
 Head over to the [IAM console](https://console.aws.amazon.com/iam/home), find and click "Create role" button **(2)** under the Roles **(1)** section.
@@ -24,4 +35,9 @@ Tag the role with a key named "aws-workshop" with an empty value, name the role 
 
 ![Image](../../src/img/Setup/Cloud9-9.jpg)
 
-Therefore, a role named "aws-workshop-admin" is ready for the Cloud9 envrioment.
+Therefore, a role named "aws-workshop-admin" is ready for use.
+
+<div class="code-example" markdown="1">
+[Previous Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn }
+[Next Step](https://juychen.github.io/docs/2_Nextflow/Nextflow.html){: .btn .btn-purple }
+</div>
