@@ -25,7 +25,17 @@ Select the "AWS service" **(3)** and choose the "EC2" use case **(4)** hit Next 
 
 ![Image](../../src/img/Setup/Cloud9-6.jpg)
 
-Select the policy named "AdministratorAccess" **(6)**.
+Select the following policies and click "attach policies" to add them **(6)**.
+- AdministratorAccess
+- AmazonEC2FullAccess
+- AmazonEC2ContainerRegistryFullAccess
+- AmazonS3FullAccess
+- AWSBatchServiceRole
+- AdministratorAccess
+- AWSBatchFullAccess
+- AmazonEC2ContainerServiceforEC2Role
+- AmazonEC2ContainerServiceRole
+
 
 ![Image](../../src/img/Setup/Cloud9-7.jpg)
 

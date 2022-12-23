@@ -5,11 +5,15 @@ nav_order: 2
 has_children: true
 ---
 
-To get started with Nextflow we are going to run a little example workflow locally.
+To get started with Vulture, you will need a AWS account and setup the environment in your account. Vulture is composed of a stack of AWS services as below:
+(image of Vulture AWS services)
 
 # Setup
 {: .no_toc }
-This chapter introduces the AWS services you will use as part of the workshop. It is recommended that you familiarize yourself with these services before proceeding. However, step-by-step guidance throughout the workshop will include the necessary context for these AWS services.
+This chapter guides you to configure the following AWS services which you will use in Vulture. 
+- AWS IAM
+- AWS Batch
+- AWS S3
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/1_Introduction/Account.html){: .btn }

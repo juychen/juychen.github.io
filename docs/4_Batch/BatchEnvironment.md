@@ -39,7 +39,7 @@ In the compute environments page, set your preference of the compute environment
 
 ![Image](../../src/img/Batch/Batch-env3.jpg)
 
-10. Select "r5a.4xlarge" in the Allowed instance type.
+10. Select "optimal" in the Allowed instance type.
 11. Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
 12. Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
 
@@ -61,7 +61,7 @@ This basically follows the same steps as to create Compute Environment 1 above, 
 ![Image](../../src/img/Batch/Batch-env1.jpg)
 
 In the compute environments page, set your preference of the compute environment as follows:
-3. Select "Managed" in the compute environment type
+3. Select "Managed" in the compute environment type.
 4. Change the environment name in the compute environment name. We suggest that you should use "scvh-CE-3".
 
 ![Image](../../src/img/Batch/Batch-env2.jpg)
@@ -74,7 +74,7 @@ In the compute environments page, set your preference of the compute environment
 
 ![Image](../../src/img/Batch/Batch-env3.jpg)
 
-10. Select "r5.8xlarge" in the Allowed instance type.
+10. Select "optimal" in the Allowed instance type.
 11. Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
 12. Select "increase-volume" in the  [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
 
