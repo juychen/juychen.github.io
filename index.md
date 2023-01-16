@@ -6,11 +6,11 @@ nav_order: 0
 
 ## Welcome to the Vulture tutorial
 
-The content of this workshop is derived from a tutorial [Nextflow with Batch](https://genomics-nf.workshop.aws/). But we change the goal to run our viral calling pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
+The content of this tutorial is derived from a tutorial [Nextflow with Batch](https://genomics-nf.workshop.aws/). We changed the goal to run our Vulture pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
 
 ## Overview
-During this workshop, you will implement a proof of concept of AWS. The goal of this workshop is to get familiar with the concepts of Nextflow and AWS Batch.
-Then runing a pipeline with simple scRNA-Seq as follows:
+In this tutorial, you will get hands-on experience with Vulture pipeline. The goal of this tutorial is to get familiar with using Vulture.
+Then running the Vulture pipeline on scRNA-Seq data as follows:
 
 ![Image](src/img/Setup/Intro.jpg)
 
