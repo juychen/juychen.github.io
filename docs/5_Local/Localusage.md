@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Running Vulture on local machines
-parent: Batch
-nav_order: 5
+parent: Local
+nav_order: 1
 ---
-
 
 
 ## <a name="require"></a>Requirements
