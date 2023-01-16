@@ -4,7 +4,7 @@ title: Welcome
 nav_order: 0
 ---
 
-## Welcome to the AWS workshop
+## Welcome to the Vulture tutorial
 
 The content of this workshop is derived from a tutorial [Nextflow with Batch](https://genomics-nf.workshop.aws/). But we change the goal to run our viral calling pipeline, which we will run locally in containers, submit locally to AWS Batch and run a batch job that submits to AWS Batch.
 
