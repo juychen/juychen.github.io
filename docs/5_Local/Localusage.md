@@ -2,7 +2,7 @@
 layout: default
 title: Running Vulture on local machines
 has_children: true
-nav_order: 1
+nav_order: 5
 ---
 
 
