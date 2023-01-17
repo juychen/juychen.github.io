@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Run Vulture pipeline
+title: Running Vulture on AWS cloud with Nextflow
 parent: Nextflow
 nav_order: 2
 ---
