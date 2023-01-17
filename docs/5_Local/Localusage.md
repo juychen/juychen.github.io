@@ -8,11 +8,12 @@ nav_order: 5
 
 ## <a name="require"></a>Requirements
 * Input: 10x Chromium scRNA-seq reads
-* DropletUtils >= v1.10.2
-* STAR >= v2.7.9a or
-* cellranger >= 6.0.0 or
-* Kallisto|bustools >= 0.25.1 or
-* salmon|alevin >= v1.4.0
+* Software:
+|DropletUtils |>= v1.10.2|
+|STAR |>= v2.7.9a or|
+|cellranger |>= 6.0.0 or|
+|Kallisto/bustools |>= 0.25.1 or|
+|salmon/alevin |>= v1.4.0|
 
 ## <a name="gen_usages"></a>General usage
 Map 10x scRNA-seq reads to the viral (and microbial) host reference set using STARsolo, CellRanger, Kallisto|bustools, or Salmon|Alevin. 
