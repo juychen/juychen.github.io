@@ -2,7 +2,7 @@
 layout: default
 title: Running Vulture on AWS cloud with Nextflow
 has_children: false
-nav_order: 6
+nav_order: 5
 ---
 
 # Nextflow and scRNA-Seq processing
@@ -100,5 +100,5 @@ nextflow run scvh_full.nf -profile batchfull -params-file params.yaml -bucket-di
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowInstall.html){: .btn }
-[Next Step](https://juychen.github.io/docs/5_Local/Localusage.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/6_Local/Localusage.html){: .btn .btn-purple }
 </div>
