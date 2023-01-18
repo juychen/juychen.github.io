@@ -24,31 +24,31 @@ Before you create an AWS Batch Compute Environment, please kindly refer to [how 
 Create an AWS Batch Environment at [AWS Batch Home](https://console.aws.amazon.com/batch/home).
 
 On the AWS Batch dashboard:
-1. Select "Compute environments" on the left panel
-2. Select "Create" to create a new compute environments
+1) Select "Compute environments" on the left panel
+2) Select "Create" to create a new compute environments
 
 ![Image](../../src/img/Batch/Vulture 3-1 Create Batch CE.png)
 
 In the Compute Environments page, set your preference of the compute environment as follows:
 Step 1 Compute environment configuration
-3. Select "Managed" in the compute environment orchestration type
-4. Change the Name in the compute environment name. We suggest that you should use "scvh-CE-r5a4x".
-5. Select "vulture-iam-role" in the Service role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
-6. Select "ecsInstanceRole" in the Instance role. 
+3) Select "Managed" in the compute environment orchestration type
+4) Change the Name in the compute environment name. We suggest that you should use "scvh-CE-r5a4x".
+5) Select "vulture-iam-role" in the Service role ([IAM role settings](https://juychen.github.io/docs/2_Setup/SetupIAM.html)). 
+6) Select "ecsInstanceRole" in the Instance role. 
 ![Image](../../src/img/Batch/Vulture 3-2 Compute Environment Configuration.png)
 
 Step 2 Instance configuration
-7. Select "Use EC2 Spot Instances" for cost-saving
+7) Select "Use EC2 Spot Instances" for cost-saving
 
 ![Image](../../src/img/Batch/Vulture 3-3 Instance Configuration vCPU.png)
 
-8. Set "0" in both Minium and Desired vCPU settings, and 256 in Maximum CPUs -required
-9. Scoll down to the "Additional configuration".
+8) Set "0" in both Minium and Desired vCPU settings, and 256 in Maximum CPUs -required
+9) Scoll down to the "Additional configuration".
 
-10. Select "optimal" in the Allowed instance type.
-11. Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
+10) Select "optimal" in the Allowed instance type.
+11) Select "SPOT_CAPACITY_OPTIMIZED" in the allocation strategy
 
-![Image](../..src/img/Batch/Vulture 3-4 Use Spot Instances and select Spot Optimized.png)
+![Image](../../src/img/Batch/Vulture 3-4 Use Spot Instances and select Spot Optimized.png)
 
 12. Select "vulture-launch-template" under Launch template. For how to create this template beforehand. Please refer to [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
 
