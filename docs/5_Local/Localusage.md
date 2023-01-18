@@ -2,7 +2,7 @@
 layout: default
 title: Running Vulture on local machines
 has_children: true
-nav_order: 5
+nav_order: 6
 ---
 
 
@@ -75,6 +75,6 @@ Usage: perl scvh_analyze_bam.pl output_dir sample_name
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/4_Batch/JobMonitoring.html){: .btn }
+[Previous Step](https://juychen.github.io/docs/6_Cloud/RunVulture.html){: .btn }
 [Next Step](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html){: .btn .btn-purple }
 </div>

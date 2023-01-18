@@ -16,8 +16,7 @@ In our tutorial, the pipeline of Nextflow and Batch deal with jobs by the follow
 
 1. We configure and run Nextflow script to trigger a submission to the job queue.
 2. The AWS Batch scheduler runs periodically to check for jobs in the job queue
-3. Once jobs are placed, the scheduler evaluates the Compute Environments and adjusts
-the compute capacity to allow the jobs to run.
+3. Once jobs are placed, the scheduler evaluates the Compute Environments and adjusts the compute capacity to allow the jobs to run.
 4. The job (packaged by the container) will run in the computational environment created.
 5. The job output will be transferred and stored in the S3 bucket.
 

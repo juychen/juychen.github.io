@@ -16,6 +16,9 @@ nav_order: 1
 
 ---
 
+## Create a launch template 
+Before you create an AWS Batch Compute Environment, please kindly refer to [how to create Vulture launch template](https://juychen.github.io/docs/6_Cloud/RunVulture.html) to create a launch template first.
+
 ## Setup Batch Vulture Compute Environment 1
 
 Create an AWS Batch Environment at [AWS Batch Home](https://console.aws.amazon.com/batch/home).

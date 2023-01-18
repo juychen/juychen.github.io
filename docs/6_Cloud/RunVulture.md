@@ -1,23 +1,16 @@
 ---
 layout: default
 title: Running Vulture on AWS cloud with Nextflow
-parent: Nextflow
-nav_order: 2
+has_children: false
+nav_order: 6
 ---
 
 # Nextflow and scRNA-Seq processing
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 ## Setup the AWS CLI
 
-Install the AWS CLI and prepare the access key and secret access key ahead by following instructions here https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html.
+Install the AWS CLI and prepare the access key and secret access key ahead by following instructions at [Obtaining AWS Credentials](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html).
 
 ```shell
 pip install awscli
@@ -30,9 +23,9 @@ aws configure
 Clone the source code of Vulture into your local computer
 
 ```shell
-git clone https://github.com/hoyu310/scvh.gi
+git clone https://github.com/holab-hku/Vulture.git
 # change into directory below
-cd scvh/nextflow
+cd Vulture/nextflow
 # checkout the branch below for most updated code
 git checkout cloud-new-junyi
 ```
@@ -52,7 +45,7 @@ aws --region ${AWS_REGION} s3 mb s3://${BUCKET_NAME_RESULTS}
 
 ## Run Vulture pipeline - 1. Build Genome reference
 
-Now we are about to run the first step of the Vulture pipeline i.e. mkref (genome reference making), execute the command below and wait it to be finished
+Now we are about to run the first step of the Vulture pipeline i.e. mkref (genome reference making), execute the command below in your favourite terminal or powershell and wait it to be finished
 
 ```shell
 nextflow run scvh_mkref.nf -profile mkref -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchA -with-report mkref_$(date +%s).html -bg &>> mkref_$(date +%s).log;
@@ -107,5 +100,5 @@ nextflow run scvh_full.nf -profile batchfull -params-file params.yaml -bucket-di
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowInstall.html){: .btn }
-[Next Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/5_Local/Localusage.html){: .btn .btn-purple }
 </div>
