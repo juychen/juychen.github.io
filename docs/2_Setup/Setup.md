@@ -16,6 +16,6 @@ This chapter guides you to configure the following AWS services which you will u
 - AWS S3
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/index.html){: .btn }
+[Previous Step](https://juychen.github.io){: .btn }
 [Next Step](https://juychen.github.io/docs/2_Setup/SetupIAM.html){: .btn .btn-purple }
 </div>
