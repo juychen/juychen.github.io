@@ -29,13 +29,13 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 4. Select your compute environment to which you created in the previous chapter i.e. [Batch Environment](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html)
 
-![Image](../../src/src/img/Batch/Vulture 5-1 Select CE in job queue.png)
+![Image](../../src/img/Batch/Vulture 5-1 Select CE in job queue.png)
 
 5. Select "Create" to create a new job queue
 
 ## Setup Batch Vulture Job Queue 2
 
-We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home). Create a Job Queue 2 for parallel processing of Vulture tasks by repeating the same steps from Step 1 to Step 4 used to create Job Queue 1 above.
+We can return back to the home page of [Batch](https://us-east-2.console.aws.amazon.com/batch/home). Create a Job Queue 2 for parallel processing of Vulture tasks by repeating the same steps from Step 1 to Step 4 used to create Job Queue 1 above.
 
 
 <div class="code-example" markdown="1">
