@@ -54,5 +54,5 @@ This saving summary page shows the price. We know that to align a 12GB scRNA-Seq
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/4_Batch/BatchQueue.html){: .btn }
-[Next Step](https://juychen.github.io/docs/4_Batch/Localusage.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/6_Cloud/RunVulture.html){: .btn .btn-purple }
 </div>

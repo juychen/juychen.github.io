@@ -100,5 +100,5 @@ nextflow run scvh_full.nf -profile batchfull -params-file params.yaml -bucket-di
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/3_Nextflow/NextflowInstall.html){: .btn }
-[Next Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/5_Local/Localusage.html){: .btn .btn-purple }
 </div>
