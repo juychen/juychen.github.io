@@ -9,7 +9,7 @@ This section introduces the installation of Nextflow and its dependencies.
 
 ## Install Nextflow
 
-Nextflow can be installed by following the instructions at https://www.nextflow.io/docs/latest/getstarted.html. If you are using OS X/Linux, you can run the commands below to install it immediately.
+Nextflow can be installed by following the instructions at [Nextflow Installation Guide](https://www.nextflow.io/docs/latest/getstarted.html). If you are using OS X/Linux, you can run the commands below to install it immediately.
 
 ```shell
 wget -qO- https://get.nextflow.io | bash
@@ -39,5 +39,5 @@ echo "AWS_REGION=${AWS_REGION}" |tee -a ~/.bashrc
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/2_Setup/Nextflow.html){: .btn }
-[Next Step](https://juychen.github.io/docs/3_Nextflow/RunVulture.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/4_Nextflow/Batch.html){: .btn .btn-purple }
 </div>
