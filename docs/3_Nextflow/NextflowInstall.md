@@ -38,6 +38,6 @@ echo "AWS_REGION=${AWS_REGION}" |tee -a ~/.bashrc
 ```
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/2_Setup/Nextflow.html){: .btn }
-[Next Step](https://juychen.github.io/docs/4_Nextflow/Batch.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn }
+[Next Step](https://juychen.github.io/docs/4_Batch/Batch.html){: .btn .btn-purple }
 </div>
