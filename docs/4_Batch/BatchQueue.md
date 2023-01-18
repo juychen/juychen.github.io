@@ -20,43 +20,23 @@ nav_order: 2
 
 We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
 
-- Select "Job queues" on the left panel
-- Select "Create" to create a new job queue
+1. Select "Job queues" on the left panel
+2. Select "Create" to create a new job queue
 
-![Image](../../src/img/Batch/Batch-queue1.jpg)
+![Image](../../src/img/Batch/Vulture 5-2 Start to create job queue.png)
 
-- Name your job queue to "jy-scvh-queue-r5a8x-1" according to your user name.
+3. Name your job queue to according to your preference.
 
-![Image](../../src/img/Batch/Batch-queue2.jpg)
+4. Select your compute environment to which you created in the previous chapter i.e. [Batch Environment](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html)
 
-- Select your compute environment to "scvh-CE-3" which you created in the previous step
+![Image](../../src/src/img/Batch/Vulture 5-1 Select CE in job queue.png)
 
-![Image](../../src/img/Batch/Batch-queue3.jpg)
-
-![Image](../../src/img/Batch/Batch-env4.jpg)
-
-- Select "Create" to create a new job queue
+5. Select "Create" to create a new job queue
 
 ## Setup Batch Vulture Job Queue 2
 
-We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home).
+We can return back to the home page of Batch at: [https://us-east-2.console.aws.amazon.com/batch/home](https://us-east-2.console.aws.amazon.com/batch/home). Create a Job Queue 2 for parallel processing of Vulture tasks by repeating the same steps from Step 1 to Step 4 used to create Job Queue 1 above.
 
-- Select "Job queues" on the left panel
-- Select "Create" to create a new job queue
-
-![Image](../../src/img/Batch/Batch-queue1.jpg)
-
-- Name your job queue to "jy-scvh-queue-r5a4x-1" according to your user name.
-
-![Image](../../src/img/Batch/Batch-queue2.jpg)
-
-- Select your compute environment to "scvh-CE-r5a4x" which you created in the previous step
-
-![Image](../../src/img/Batch/Batch-queue3.jpg)
-
-![Image](../../src/img/Batch/Batch-env4.jpg)
-
-- Select "Create" to create a new job queue
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html){: .btn }

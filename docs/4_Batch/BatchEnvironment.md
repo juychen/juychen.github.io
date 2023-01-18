@@ -18,7 +18,7 @@ nav_order: 1
 
 ## Setup Batch Vulture Compute Environment 1
 
-Create an AWS Batch Environment at [https://console.aws.amazon.com/batch/home](https://console.aws.amazon.com/batch/home).
+Create an AWS Batch Environment at [AWS Batch Home](https://console.aws.amazon.com/batch/home).
 
 On the AWS Batch dashboard:
 1. Select "Compute environments" on the left panel
@@ -68,7 +68,7 @@ This basically follows the same steps as to create Compute Environment 1 above, 
 ![Image](../../src/img/Batch/Vulture 4-1 Create second CE.png)
 ![Image](../../src/img/Batch/Vulture 4-2 Configure 2nd CE.png)
 
-Repeat the configuration steps from Step 2. to Step 13 to finish create Compute Environment 2. used for creating Compute Environment 1 above.
+Repeat the configuration steps from Step 2. to Step 13 to finish create Compute Environment 2 used for creating Compute Environment 1 above.
 
 
 <div class="code-example" markdown="1">
