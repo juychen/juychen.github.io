@@ -7,9 +7,7 @@ nav_order: 6
 
 
 ## <a name="require"></a>Requirements
-### Input: 
-* 10x Chromium scRNA-seq reads
-### Software:
+* Input data: 10x Chromium scRNA-seq reads
 * DropletUtils >= v1.10.2
 * STAR >= v2.7.9a or
 * cellranger >= 6.0.0 or
