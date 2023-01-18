@@ -19,11 +19,11 @@ nav_order: 5
 Map 10x scRNA-seq reads to the viral (and microbial) host reference set using STARsolo, CellRanger, Kallisto|bustools, or Salmon|Alevin. 
 
 ### 0. Prerequiresits to download genome files
-You need to download virus genome, prokaryotes genome, combined genome and virus combined genome in the following link and save them in a folder as vmh_genome_dir to be used in the next step.
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses.viruSITE.with_hg38.fa
+You need to download virus genome, prokaryotes genome, combined genome and virus combined genome in the following link and save them in a folder as "vmh_genome_dir" to be used in the next step.
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa)
+[human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses.viruSITE.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.fa)
 
 ### 1. Map 10x scRNA-seq reads to the viral microbial host reference set:
 
