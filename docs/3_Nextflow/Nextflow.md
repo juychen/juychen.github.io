@@ -15,5 +15,5 @@ You can refer to the [Nextflow documentation](https://www.nextflow.io/docs/lates
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn }
-[Next Step](https://juychen.github.io/docs/3_Nextflow/NextfInstall.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/3_Nextflow/NextflowInstall.html){: .btn .btn-purple }
 </div>
