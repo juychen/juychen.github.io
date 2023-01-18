@@ -19,30 +19,34 @@ nav_order: 5
 Map 10x scRNA-seq reads to the viral (and microbial) host reference set using STARsolo, CellRanger, Kallisto|bustools, or Salmon|Alevin. 
 
 ### 0. Prerequiresits to download genome files
-You need to download virus genome, prokaryotes genome, combined genome and virus combined genome in the following link and save them in a folder as vmh_genome_dir to be used in the next step.
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf
-/home/d24h_prog5/angelayin/input_data/ref/human_host_viruses.viruSITE.with_hg38.fa
+You need to download virus genome, prokaryotes genome, combined genome and virus combined genome in the following link and save them in a folder as "vmh_genome_dir" to be used in the next step.
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa)
+[human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses.viruSITE.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.fa)
 
 ### 1. Map 10x scRNA-seq reads to the viral microbial host reference set:
 
 ```sh
-Usage: scvh_map_reads.pl [Options] <vmh_genome_dir> <R2> <R1>
+Usage: scvh_map_reads.pl [Options] <vmh_genome_dir> <R2> <R1> or <vmh_genome_dir> <.bam file>
 
-Options:                                                                                                                
--o/--output-dir	<string>   the output directory (Default: "./")                                       
--t/--threads <int>         number of threads to run alignment with  (Default: 1)
--d/--database <string>     select virus or virus and prokaryotes database, can be 'viruSITE' or 'viruSITE.NCBIprokaryotes'  (Default: "viruSITE.NCBIprokaryotes")
--e/--exe <string>          executable command or stand alone executable path of the alignment tool  (Default: "STAR")
--s/--soloStrand <string>   STARsolo param: Reverse or Forward used for 10x 5' or 3' protocol, respectively  (Default: "Reverse")
--w/--whitelist <string>    STARsolo param --soloCBwhitelist (Default: "$genome_dir/737K-august-2016.txt")
--r/--ram <int>             Limitation of RAM usage. For STARsolo, param: limitGenomeGenerateRAM unit by GB  (Default: 8)
--f/--soloFeatures <string> STARsolo param:  See --soloFeatures in STARsolo manual   (Default: "Gene")
--ot/--outSAMtype <string>  STARsolo param:  See --outSAMtype in STARsolo manual (Default: "BAM SortedByCoordinate")
--mm/--soloMultiMappers <string>  STARsolo param:  See --soloMultiMappers in STARsolo manual (Default: "EM")
--a/--alignment <string>    Select alignment methods: 'STAR', 'KB', 'Alevin', or 'CellRanger'    (Default: "STAR")
--v/--technology <string>   KB param:  Single-cell technology used (`kb --list` to view) (Default: "10XV2")
+Options:                                                                                                                                Defaults
+-o/--output-dir	<string>   the output directory                                                                                          [./]
+-t/--threads <int>         number of threads to run alignment with                                                                       [<1>]
+-d/--database <string>     select virus or virus and prokaryotes database, can be 'viruSITE' or 'viruSITE.NCBIprokaryotes'               [<viruSITE.NCBIprokaryotes>]
+-e/--exe <string>          executable command or stand alone executable path of the alignment tool                                       [<>]
+-s/--soloStrand <string>   STARsolo param: Reverse or Forward used for 10x 5' or 3' protocol, respectively                               [<Reverse>]
+-w/--whitelist <string>    STARsolo param --soloCBwhitelist                                                                              [<"vmh_genome_dir"/737K-august-2016.txt>]
+-r/--ram <int>             limitation of RAM usage. For STARsolo, param: limitGenomeGenerateRAM unit by GB                               [<8>]
+-f/--soloFeature <string> STARsolo param:  See --soloFeatures in STARsolo manual                                                        [<Gene>]
+-ot/--outSAMtype <string>  STARsolo param:  See --outSAMtype in STARsolo manual                                                          [<BAM SortedByCoordinate>]
+-mm/--soloMultiMappers <string>  STARsolo param:  See --soloMultiMappers in STARsolo manual                                              [<EM>]
+-a/--alignment <string>    Select alignment methods: 'STAR', 'KB', 'Alevin', or 'CellRanger'                                             [<STAR>]
+-v/--technology <string>   KB param:  Single-cell technology used (`kb --list` to view)                                                  [<10XV2>]
+--soloCBstart <string>  STARsolo param:  See --soloCBstart in STARsolo manual                                                            [<1>]
+--soloCBlen <string>  STARsolo param:  See --soloCBlen in STARsolo manual                                                                [<16>]
+--soloUMIstart <string>  STARsolo param:  See --soloUMIstart in STARsolo manual                                                          [<17>]
+--soloUMIlen <string>  STARsolo param:  See --soloUMIlen in STARsolo manual   
 
 ```
 For alignment option 'STAR', 'KB', and 'Alevin', run:
