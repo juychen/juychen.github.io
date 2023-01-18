@@ -29,7 +29,7 @@ We can return back to the home page of Batch at: [https://us-east-2.console.aws.
 
 4. Select your compute environment to which you created in the previous chapter i.e. [Batch Environment](https://juychen.github.io/docs/4_Batch/BatchEnvironment.html)
 
-![Image](../../src/src/img/Batch/Vulture 5-1 Select CE in job queue.png)
+![Image](../../src/img/Batch/Vulture 5-1 Select CE in job queue.png)
 
 5. Select "Create" to create a new job queue
 
