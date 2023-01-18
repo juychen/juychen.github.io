@@ -1,19 +1,20 @@
 ---
 layout: default
 title: Running Vulture on local machines
-has_children: true
+has_children: false
 nav_order: 6
 ---
 
 
 ## <a name="require"></a>Requirements
-* Input: 10x Chromium scRNA-seq reads
-* Software:
-* DropletUtils |>= v1.10.2
-* STAR |>= v2.7.9a or
-* cellranger |>= 6.0.0 or
-* Kallisto/bustools |>= 0.25.1 or
-* salmon/alevin |>= v1.4.0
+Input: 
+* 10x Chromium scRNA-seq reads
+Software:
+* DropletUtils >= v1.10.2
+* STAR >= v2.7.9a or
+* cellranger >= 6.0.0 or
+* Kallisto/bustools >= 0.25.1 or
+* salmon/alevin >= v1.4.0
 
 ## <a name="gen_usages"></a>General usage
 Map 10x scRNA-seq reads to the viral (and microbial) host reference set using STARsolo, CellRanger, Kallisto|bustools, or Salmon|Alevin. 
@@ -75,6 +76,6 @@ Usage: perl scvh_analyze_bam.pl output_dir sample_name
 
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/6_Cloud/RunVulture.html){: .btn }
+[Previous Step](https://juychen.github.io/docs/5_Cloud/RunVulture.html){: .btn }
 [Next Step](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html){: .btn .btn-purple }
 </div>
