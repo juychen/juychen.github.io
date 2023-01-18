@@ -47,5 +47,5 @@ Therefore, a role named "aws-workshop-admin" is ready for use.
 
 <div class="code-example" markdown="1">
 [Previous Step](https://juychen.github.io/docs/2_Setup/Setup.html){: .btn }
-[Next Step](https://juychen.github.io/docs/2_Nextflow/Nextflow.html){: .btn .btn-purple }
+[Next Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn .btn-purple }
 </div>
