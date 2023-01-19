@@ -48,19 +48,24 @@ Options:                                                                        
 --soloUMIlen <string>  STARsolo param:  See --soloUMIlen in STARsolo manual   
 
 ```
-For alignment option 'STAR', 'KB', and 'Alevin', run:
+For fastqs alignment option 'STAR', 'KB', and 'Alevin', run:
 ```sh
 perl scvh_map_reads.pl -t num_threads -o output_dir vmh_genome_dir R2.fastq.gz R1.fastq.gz
 ```
 where *-t* is a user-specified integer indicating number of threads to run with, *output_dir* is a user-specified directory to place the outputs, *vmh_genome_dir* is a pre-generated viral (and microbial) host (human) reference set directory, *R2.fastq.gz* and *R1.fastq.gz* are input 10x scRNA-seq reads.
 
-For option 'CellRanger', run:
+For fastqs option 'CellRanger', run:
 
 ```sh
 perl scvh_map_reads.pl -t num_threads -o output_dir vmh_genome_dir sample fastqs
 ```
 where *sample* and *fastqs* are two cellranger arguments: *--sample* and *--fastqs*. See documentation in [cellranger count](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count) to infer rules of fastq and sample naming.
 
+For bam files, we only support STARsolo, run:
+
+```sh
+perl scvh_map_reads.pl -t num_threads -o output_dir vmh_genome_dir your_bam_file.bam
+```
 ### 2. Filter the mapped UMIs using EmptyDrops to get the viral (and microbial) host filtered UMI counts matrix and also output viral genes and barcodes info files:
 ```sh
 Usage: Rscript scvh_filter_matrix.r output_dir sample_name
