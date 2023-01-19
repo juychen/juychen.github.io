@@ -28,13 +28,10 @@ Inside the information page, you can click the link below the "Log stream name" 
 
 
 ## View results
-You can select go the [S3 Bucket](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batch/alignment_results/figures/umapumapplot.pdf" page similar to what we did in the previous section. Click to open it. The result UMAP plot should be similar to this: 
+You can select go the [S3 Bucket](https://s3.console.aws.amazon.com/s3/home). Looking into the path: "s3://${BUCKET_NAME_RESULTS}/batchD/{SAMPLE_ID}/alignment_outs/" page. Click to open it. The Vulture results should look like in the picture below: 
 
-![Image](../../src/img/Batch/Batch-result.jpg)
+![Image](../../src/img/Nextflow/Vulture 7-4 Vulture results in S3.png)
 
-
-
-The umap polt looks better than the small example now.
 
 ## View pricing of the program
 
