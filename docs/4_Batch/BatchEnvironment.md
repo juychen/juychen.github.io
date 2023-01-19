@@ -50,12 +50,12 @@ Step 2 Instance configuration
 
 ![Image](../../src/img/Batch/Vulture 3-4 Use Spot Instances and select Spot Optimized.png)
 
-12. Select "vulture-launch-template" under Launch template. For how to create this template beforehand. Please refer to [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
+12) Select "vulture-launch-template" under Launch template. For how to create this template beforehand. Please refer to [launch template](https://juychen.github.io/docs/10_Supplementary/Launchtemp.html). 
 
 We apply this template to every instance Batch schedules for us because we have mentioned in the previous section that the default  storage of EC2 instance is not enough for the Vulture pipeline, this template will provide extra spaces for our Batch job's instance. 
 
 Step 3 Network configuration
-13. Select "Default for VPC" under the Virtual Private Cloud (VPC) ID, this will select the [default VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html). Note that all AWS accounts comes with a default VPC for use in each Region. A default VPC comes with a public subnet in each Availability Zone, an internet gateway, and settings to enable DNS resolution. Therefore, you can immediately start launching Amazon EC2 instances into a default VPC. A default VPC is suitable for getting started quickly.
+13) Select "Default for VPC" under the Virtual Private Cloud (VPC) ID, this will select the [default VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html). Note that all AWS accounts comes with a default VPC for use in each Region. A default VPC comes with a public subnet in each Availability Zone, an internet gateway, and settings to enable DNS resolution. Therefore, you can immediately start launching Amazon EC2 instances into a default VPC. A default VPC is suitable for getting started quickly.
 
 ![Image](../../src/img/Batch/Vulture 4-3 Select Network Configuration for 2nd Queue.png)
 
@@ -65,8 +65,8 @@ Leave other settings of the environment as default and create an environment.
 
 This basically follows the same steps as to create Compute Environment 1 above, but with different name and instance type, to enable massively parallel processing of Vulture tasks with Batch.
 
-1. Select "Compute environments" on the left panel
-2. Select "Create" to create a new compute environments
+1) Select "Compute environments" on the left panel
+2) Select "Create" to create a new compute environments
 
 ![Image](../../src/img/Batch/Vulture 4-1 Create second CE.png)
 ![Image](../../src/img/Batch/Vulture 4-2 Configure 2nd CE.png)

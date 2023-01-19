@@ -51,7 +51,7 @@ Now we are about to run the first step of the Vulture pipeline i.e. mkref (genom
 nextflow run scvh_mkref.nf -profile mkref -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchA -with-report mkref_$(date +%s).html -bg &>> mkref_$(date +%s).log;
 ```
 
-After the above job is done, you need to edit line in "scvh/nextflow/nextflow.config" file -> params.ref = 's3://scvhwf/humangenome/' to the actual S3 path where your genome file is i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA"
+After the above job is done, you need to edit line in "nextflow/nextflow.config" file -> params.ref = 's3://scvhwf/humangenome/' to the actual S3 path where your genome file is i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA"
 
 ```shell
 ...
@@ -68,7 +68,7 @@ params.ref = 's3://scvhwf/humangenome/'
 
 ## Run Vulture pipeline - 2. Start main analysis
 
-Before we start our analysis, we need to edit "scvh/nextflow/params.yaml" file to include the reads of your interest. Here is a snippet of how the "params.yaml" file looks like
+Before we start our analysis, we need to edit "nextflow/params.yaml" file to include the reads of your interest. Here is a snippet of how the "params.yaml" file looks like
 
 ```shell
 ...
