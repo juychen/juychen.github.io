@@ -51,7 +51,29 @@ Now we are about to run the first step of the Vulture pipeline i.e. mkref (genom
 nextflow run scvh_mkref.nf -profile mkref -bucket-dir s3://${BUCKET_NAME_TEMP} --outdir=s3://${BUCKET_NAME_RESULTS}/batchA -with-report mkref_$(date +%s).html -bg &>> mkref_$(date +%s).log;
 ```
 
-After the above job is done, you need to edit line in "nextflow/nextflow.config" file -> params.ref = 's3://scvhwf/humangenome/' to the actual S3 path where your genome file is i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA"
+The input data required for mkref stage are available in the downloadable links below, you can save them into your own S3 bucket folder:
+
+[hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/hg38.fa)
+[hg38.unique_gene_names.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/hg38.unique_gene_names.gtf)
+[prokaryotes_small.csv](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/prokaryotes_small.csv)
+[prokaryotes.csv](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/prokaryotes.csv)
+[viruSITE_human_host_small.txt](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/viruSITE_human_host_small.txt)
+[viruSITE_human_host.txt](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/viruSITE_human_host.txt)
+
+Also you can generate the files yourself following instructions below:
+
+[VirusSITE csv file](http://virusite.org/index.php?nav=search&fields=1&query1=Human&wc1=on&field1=virus.host&search=Search&query2=&wc2=on&field2=virus.name&query3=&wc3=on&field3=virus.name&search_nav=virus&sort=name&order=asc&rows=25&page=1)
+(viruSITE human host)
+Click "Format: CSV"
+
+[Prokaryotes csv file](https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/)
+Filters -> Host (Homo sapiens) -> Assembly level (Complete) -> RefSeq category (representative) -> Download [prokaryotes.csv]
+
+After the mkref job is done, you need to edit line in "nextflow/nextflow.config" file -> "params.ref" to the actual S3 path where your output reference genome files are i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA" or you could download from the downloadable links below and store them into your own S3 bucket folder:
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses_microbes.viruSITE.NCBIprokaryotes.with_hg38.fa)
+[human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.removed_amb_viral_exon.gtf)
+[human_host_viruses.viruSITE.with_hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/human_host_viruses.viruSITE.with_hg38.fa)
 
 ```shell
 ...
@@ -59,11 +81,12 @@ mkref {
 aws.region = 'us-east-2'
 process.container = 'public.ecr.aws/b6a4h2a6/scvh_mkref:latest'
 process.executor = 'awsbatch'
-process.queue = 'jy-scvh-queue-r5a4x-1'
+process.queue = 'vulture-stdq'
 # this line needs to be changed
-params.ref = 's3://scvhwf/humangenome/'
+params.ref = 's3://vulture-reference/humangenome/'
 }
 ...
+
 ```
 
 ## Run Vulture pipeline - 2. Start main analysis
