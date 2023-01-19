@@ -62,11 +62,11 @@ The input data required for mkref stage are available in the downloadable links 
 
 Also you can generate the files yourself following instructions below:
 
-[VirusSITE csv file](http://virusite.org/index.php?nav=search&fields=1&query1=Human&wc1=on&field1=virus.host&search=Search&query2=&wc2=on&field2=virus.name&query3=&wc3=on&field3=virus.name&search_nav=virus&sort=name&order=asc&rows=25&page=1)
+[VirusSITE](http://virusite.org/index.php?nav=search&fields=1&query1=Human&wc1=on&field1=virus.host&search=Search&query2=&wc2=on&field2=virus.name&query3=&wc3=on&field3=virus.name&search_nav=virus&sort=name&order=asc&rows=25&page=1)
 (viruSITE human host)
 Click "Format: CSV"
 
-[Prokaryotes csv file](https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/)
+[NCBI Prokaryotes](https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/)
 Filters -> Host (Homo sapiens) -> Assembly level (Complete) -> RefSeq category (representative) -> Download [prokaryotes.csv]
 
 After the mkref job is done, you need to edit line in "nextflow/nextflow.config" file -> "params.ref" to the actual S3 path where your output reference genome files are i.e. in "s3://${BUCKET_NAME_RESULTS}/batchA" or you could download from the downloadable links below and store them into your own S3 bucket folder:
