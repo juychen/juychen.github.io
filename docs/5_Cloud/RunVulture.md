@@ -55,9 +55,7 @@ The input data required for mkref stage are available in the downloadable links 
 
 [hg38.fa](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/hg38.fa)
 [hg38.unique_gene_names.gtf](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/hg38.unique_gene_names.gtf)
-[prokaryotes_small.csv](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/prokaryotes_small.csv)
 [prokaryotes.csv](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/prokaryotes.csv)
-[viruSITE_human_host_small.txt](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/viruSITE_human_host_small.txt)
 [viruSITE_human_host.txt](https://vulture-reference.s3.ap-east-1.amazonaws.com/humangenome/viruSITE_human_host.txt)
 
 Also you can generate the files yourself following instructions below:
