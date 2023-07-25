@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Docker
-parent:  Localrun
+parent: Localrun
 nav_order: 4
 ---
 
@@ -17,6 +17,6 @@ nav_order: 4
 PLACEHOLDER
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/6_Local/Docker.html){: .btn }
-[Next Step](https://juychen.github.io/docs/6_Local/Nextflow.html){: .btn .btn-purple }
+[Previous Step](https://juychen.github.io/docs/6_Local/Nextflow.html){: .btn }
+[Next Step](https://juychen.github.io/docs/10_Supplementary/Supplementary.html){: .btn .btn-purple }
 </div>
