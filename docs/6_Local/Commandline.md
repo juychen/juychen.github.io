@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Commandline
-parent: Quickstart
-nav_order: 1
+parent: Localrun
+nav_order: 2
 ---
 
 # Create Batch Compute Environmnet
