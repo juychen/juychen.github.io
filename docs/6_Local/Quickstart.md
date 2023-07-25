@@ -1,16 +1,22 @@
 ---
 layout: default
-title: Quickstart
-has_children: true
-nav_order: 6
+title: Nextflow
+parent: Localrun
+nav_order: 1
 ---
 
-# Overview
+# Create Batch Compute Environmnet
 {: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 PLACEHOLDER
 
 <div class="code-example" markdown="1">
-[Previous Step](https://juychen.github.io/docs/3_Nextflow/Nextflow.html){: .btn }
+[Previous Step](https://juychen.github.io/docs/6_Local/Localrun.html){: .btn }
 [Next Step](https://juychen.github.io/docs/6_Local/Commandline.html){: .btn .btn-purple }
 </div>
