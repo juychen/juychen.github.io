@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Nextflow
-parent: Quickstart
+parent:  Localrun
 nav_order: 2
 ---
 
-# Create Batch Compute Environmnet
+# Create Nextflow environment
 {: .no_toc }
 
 ## Table of contents
