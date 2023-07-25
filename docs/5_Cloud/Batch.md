@@ -2,7 +2,7 @@
 layout: default
 title: Batch
 parent: Running Vulture on AWS cloud with Nextflow
-nav_order: 4
+nav_order: 3
 ---
 
 # Overview
