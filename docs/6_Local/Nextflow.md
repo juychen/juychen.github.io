@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Nextflow
-parent:  Localrun
-nav_order: 2
+parent: Localrun
+nav_order: 3
 ---
 
 # Create Nextflow environment
